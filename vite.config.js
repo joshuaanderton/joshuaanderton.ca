@@ -1,11 +1,15 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import laravel from 'laravel-vite-plugin'
+import preact from '@preact/preset-vite'
+import tailwindcss from 'tailwindcss'
+import blazervel from './vendor/blazervel/ui/vite.config'
 
-export default defineConfig({
-    plugins: [
+export default blazervel({
+	plugins: [
+		preact(),
+		tailwindcss(),
         laravel([
             'resources/css/app.css',
-            'resources/js/app.js',
-        ]),
-    ],
-});
+            'resources/js/app.tsx',
+        ])
+	]
+})

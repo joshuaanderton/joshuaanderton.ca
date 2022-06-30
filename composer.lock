@@ -283,12 +283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/ui.git",
-                "reference": "8a253399dcb275e3ae1630b73f4625d9fd07e6e1"
+                "reference": "5baacd107f73d8732694c9f1204ff41298140a86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/ui/zipball/8a253399dcb275e3ae1630b73f4625d9fd07e6e1",
-                "reference": "8a253399dcb275e3ae1630b73f4625d9fd07e6e1",
+                "url": "https://api.github.com/repos/blazervel/ui/zipball/5baacd107f73d8732694c9f1204ff41298140a86",
+                "reference": "5baacd107f73d8732694c9f1204ff41298140a86",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +331,7 @@
                 "issues": "https://github.com/blazervel/ui/issues",
                 "source": "https://github.com/blazervel/ui/tree/master"
             },
-            "time": "2022-06-25T03:44:23+00:00"
+            "time": "2022-06-28T23:40:36+00:00"
         },
         {
             "name": "brick/math",

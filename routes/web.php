@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Features\Pages\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::domain(config('subdomains.music'))->group(function ($router) {
+  Route::get('/', fn () => view('music'));
 });
+
+Route::get('/', Home::class)->name('home');
