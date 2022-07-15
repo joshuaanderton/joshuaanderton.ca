@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\{ App, Route, URL };
 use App\Features\Pages;
 
 if (App::environment(['production', 'staging'])) :
