@@ -4,12 +4,9 @@ import tailwindcss from 'tailwindcss'
 import blazervel from './vendor/blazervel/ui/vite.config'
 
 export default blazervel({
-	plugins: [
-		preact(),
-		tailwindcss(),
-        laravel([
-            'resources/css/app.css',
-            'resources/js/app.tsx',
-        ])
-	]
+  plugins: [
+    preact(),
+    tailwindcss(),
+    laravel(['resources/js/app.tsx'])
+  ]
 })

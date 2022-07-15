@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Features\Pages\Home;
+use App\Features\Pages;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,7 @@ use App\Features\Pages\Home;
 */
 
 Route::domain(config('subdomains.music'))->group(function ($router) {
-  Route::get('/', fn () => view('music'));
+  Route::get('/', Pages\Music::class)->name('music');
 });
 
-Route::get('/', Home::class)->name('home');
+Route::get('/', Pages\Home::class)->name('home');
