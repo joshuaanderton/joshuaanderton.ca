@@ -6,21 +6,21 @@ export default function () {
     <main>
 
       <Container>
-        <div className="md:-mx-12 relative space-y-7 md:space-y-0">
-          <div className="md:absolute z-10 md:top-24 md:left-1/2 md:-ml-24 md:pr-12">
-            <h1 className="md:flex md:whitespace-nowrap md:flex-col font-bold text-4xl sm:text-5xl md:text-6xl text-chrome-100 leading-tight md:leading-[4.5rem]">
+        <div className="-mx-6 px-6 pb-6 pt-64 sm:pt-72 md:pt-0 md:-mx-12 relative">
+          <div className="absolute inset-0 md:relative z-0 max-w-full md:max-w-[50%] overflow-hidden">
+            <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t md:bg-gradient-to-l opacity-50 from-chrome-900"></div>
+            <Image div src="images/headshot.png" className="opacity-70 h-0 pb-[150%] md:rounded-bl-[4rem] -ml-12 -mt-12 md:mt-0 md:ml-0" />
+          </div>
+          <div className="opacity-40 hidden md:block absolute top-[80%] right-0 max-w-[50%] overflow-hidden">
+            <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t from-chrome-900 via-chrome-900"></div>
+            <Image src="images/headshot.png" className="rotate-180 opacity-80 md:rounded-bl-[4rem]" />
+          </div>
+          <div className="max-w-sm sm:max-w-xl md:max-w-full md:absolute relative z-10 md:top-24 md:left-1/2 md:-ml-24 md:pr-12">
+            <h1 className="md:flex md:flex-col font-bold text-3xl sm:text-5xl md:text-6xl text-chrome-100 leading-tight md:leading-[4.5rem]">
               <span>Fullstack </span>
               <span>web developer </span>
-              <span>in Vancouver 🇨🇦</span>
+              <span className="whitespace-nowrap">in Vancouver 🇨🇦</span>
             </h1>
-          </div>
-          <div className="relative z-0 max-w-[50%]">
-            <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t md:bg-gradient-to-l opacity-50 from-chrome-900"></div>
-            <Image src="images/headshot.png" className="opacity-70" />
-          </div>
-          <div className="opacity-70 hidden md:block absolute top-[80%] right-0 max-w-[50%] overflow-hidden">
-            <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t from-chrome-900 via-chrome-900"></div>
-            <Image src="images/headshot.png" className="rotate-180 opacity-80" />
           </div>
         </div>
       </Container>
