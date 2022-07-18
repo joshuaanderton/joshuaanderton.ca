@@ -65,7 +65,7 @@ module.exports = {
     './storage/framework/views/*.php',
     './resources/views/**/*.blade.php',
     './resources/js/**/*.{js,jsx,ts,tsx}',
-    '.vendor/blazervel/ui/resources/js/**/*.{js,jsx,ts,tsx}',
+    './vendor/blazervel/ui/resources/js/**/*.{js,jsx,ts,tsx}',
     '../packages/ui/resources/js/**/*.{js,jsx,ts,tsx}'
   ],
 
