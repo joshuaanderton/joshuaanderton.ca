@@ -5,22 +5,42 @@ export default function () {
   return (
     <main>
 
+      {/*
+      <div className="flex items-center justify-center h-[40rem] relative overflow-hidden">
+        <div className="absolute inset-0 z-0 blur-lg" style="background-image: url('images/headshot2-texture.jpg'); background-size: 10rem"></div>
+        <div className="bg-texture-pattern absolute inset-0 z-10"></div>
+        <Container className="relative z-20">
+          <div className="flex flex-col items-center">
+            <h1 className="text-chrome-700 p-0 mx-0 whitespace-nowrap mt-2 mb-5 text-8xl font-bold">
+              Joshua Anderton
+            </h1>
+            <div className="bg-white bg-opacity-30 px-4 py-12">
+              <Image src="images/headshot2.jpg" className="opacity-80" />
+            </div>
+          </div>
+        </Container>
+      </div>
+      */}
+
       <Container className="pb-14 space-y-14">
         
         <section>
-          <h1 className="text-chrome-700 p-0 mx-0 whitespace-nowrap mt-2 mb-5 text-8xl font-bold">
-            Joshua Anderton
-          </h1>
-          <div className="relative opacity-70">
+          <div className="relative opacity-70 bg-chrome-600 overflow-hidden">
             <div className="bg-texture-pattern absolute inset-0 z-10"></div>
+            <div className="relative">
+              <div className="absolute inset-0 z-0 opacity-30" style="background-image: url(images/denmark.jpg); background-size: 160%"></div>
+              <h1 className="relative z-1 text-chrome-800 leading-none text-center -mb-2 -ml-1 sm:-mb-3 -mt-4 sm:-mt-6 p-0 mx-0 whitespace-nowrap text-6xl sm:text-[5.3rem] md:text-[6.2rem] font-bold">
+                Joshua Anderton
+              </h1>
+            </div>
             <Image
               div
-              src="https://p.gcp.recordunion.com/electronic-press-kit-service/v1/photos/featured/7f7fdb90-4d2d-4001-9421-554a00db8e6b/F1440X720"
-              className="block w-auto max-w-full rounded-sm h-0 pb-[55%]" />
+              src="images/denmark.jpg"
+              className="block w-auto max-w-full opacity-50 rounded-sm h-0 pb-[55%]" />
           </div>
         </section>
 
-        {/*       
+        {/*
         <section className="mt-14">
           <h3 className="text-chrome-200 text-5xl font-bold pb-5">
             Featured Tracks
@@ -38,24 +58,27 @@ export default function () {
         */}
 
         <section className="mt-14">
-          <h3 className="text-chrome-200 text-5xl font-bold pb-5">
-            Social Media
-          </h3>
 
-          <div className="space-y-2">
-            <a target="_blank" href="https://instagram.com/joshuaanderton" className="group flex items-center space-x-2 text-red-500 align-baseline break-words cursor-pointer box-border">
-              <i class="fa-brands fa-instagram"></i>
-              <span><span className="text-red-700 group-hover:text-red-500">instagram.com/</span>joshuaanderton</span>
+          <div className="md:flex md:justify-around space-y-2 md:space-y-0">
+            <a target="_blank" href="https://instagram.com/joshuaanderton" className="group flex items-center space-x-2 text-theme-500 align-baseline break-words cursor-pointer box-border">
+              <i className="relative top-px fa-brands fa-instagram"></i>
+              <span>
+                <span className="text-theme-700 group-hover:text-theme-500">instagram.com/</span>joshuaanderton
+              </span>
             </a>
 
-            <a target="_blank" href="https://open.spotify.com/artist/1LCg6vLopkJxOdrGxHOtNn" className="group flex items-center space-x-2 text-red-500 align-baseline break-words cursor-pointer box-border">
-              <i class="fa-brands fa-spotify"></i>
-              <span><span className="text-red-700 group-hover:text-red-500">spotify.com/</span>joshuaanderton</span>
+            <a target="_blank" href="https://open.spotify.com/artist/1LCg6vLopkJxOdrGxHOtNn" className="group flex items-center space-x-2 text-theme-500 align-baseline break-words cursor-pointer box-border">
+              <i className="relative top-px fa-brands fa-spotify"></i>
+              <span>
+                <span className="text-theme-700 group-hover:text-theme-500">spotify.com/</span>joshuaanderton
+              </span>
             </a>
 
-            <a target="_blank" href="mailto:hey@joshuaanderton.ca" className="group flex items-center space-x-2 text-red-500 align-baseline break-words cursor-pointer box-border">
-              <i className="fas fa-envelope"></i>
-              <span><span className="text-red-700 group-hover:text-red-500">hey</span><i className="fa-light fa-at"></i>joshuaanderton.ca</span>
+            <a target="_blank" href="mailto:hey@joshuaanderton.ca" className="group flex items-center space-x-2 text-theme-500 align-baseline break-words cursor-pointer box-border">
+              <i className="relative top-px fa-solid fa-envelope"></i>
+              <span>
+                <span className="text-theme-700 group-hover:text-theme-500">hey</span><i className="fa-light fa-at"></i>joshuaanderton.ca
+              </span>
             </a>
           </div>
 
