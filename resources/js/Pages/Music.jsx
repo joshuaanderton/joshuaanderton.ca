@@ -3,7 +3,9 @@ import { Image, Container } from '@blazervel/components'
 
 export default function () {
   return (
-    <main>
+    <main className="bg-gradient-to-b from-chrome-800 to-theme-800 min-h-screen">
+
+      <div className="bg-texture-pattern opacity-10 absolute inset-0 z-1"></div>
 
       {/*
       <div className="flex items-center justify-center h-[40rem] relative overflow-hidden">
@@ -22,13 +24,12 @@ export default function () {
       </div>
       */}
 
-      <Container className="pb-14 space-y-14">
+      <Container className="pb-14 space-y-14 relative z-10">
         
         <section>
           <div className="relative opacity-70 bg-chrome-600 overflow-hidden">
             <div className="bg-texture-pattern absolute inset-0 z-10"></div>
             <div className="relative">
-              <div className="absolute inset-0 z-0 opacity-30" style="background-image: url(images/denmark.jpg); background-size: 160%"></div>
               <h1 className="relative z-1 text-chrome-800 leading-none text-center -mb-2 -ml-1 sm:-mb-3 -mt-4 sm:-mt-6 p-0 mx-0 whitespace-nowrap text-6xl sm:text-[5.3rem] md:text-[6.2rem] font-bold">
                 Joshua Anderton
               </h1>
