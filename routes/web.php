@@ -12,3 +12,7 @@ Route::domain(config('subdomains.music'))->group(function ($router) {
 });
 
 Route::get('/', Pages\Home::class)->name('home');
+
+Route::domain('gettingtoramen.com')->group(fn () => (
+  Route::get('/', Pages\Home::class)->name('home')
+));
