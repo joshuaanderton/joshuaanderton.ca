@@ -16,3 +16,5 @@ Route::get('/', Pages\Home::class)->name('home');
 Route::domain('gettingtoramen.com')->group(fn () => (
   Route::get('/', Pages\Home::class)->name('home')
 ));
+
+Route::get('chat', fn () => view('chat'))->name('chat');
