@@ -35,11 +35,21 @@ export default function () {
 
             <li>
               <div>
+                Fullstack PHP Contractor (Laravel, Vue, React, Livewire)
+              </div>
+              <div className="text-base">
+                <span className="mr-1">at</span>
+                <span className="font-medium text-white">Polarize Technologies Inc.</span>
+              </div>
+            </li>
+
+            <li>
+              <div>
                 Senior TALL Stack Developer
               </div>
               <div className="text-base">
                 <span className="mr-1">at</span>
-                <span className="font-medium text-white">ScholarPath</span> <span className="text-chrome-600">(Jan 2022 — Present)</span>
+                <span className="font-medium text-white">ScholarPath</span>
               </div>
             </li>
 
