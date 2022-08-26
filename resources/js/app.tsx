@@ -8,7 +8,7 @@ const appName = import.meta.env.VITE_APP_NAME || 'Blazervel'
 
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
-  resolve: (name) => resolvePage(`Pages/${name}`, import.meta.glob('./Pages/**/*.jsx')),
+  resolve: (name) => resolvePage(name, import.meta.glob('./Pages/**/*.jsx')),
   setup({ el, App, props }) {
     return render(<App {...props} />, el)
   },

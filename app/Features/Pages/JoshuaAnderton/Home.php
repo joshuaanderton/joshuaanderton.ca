@@ -7,6 +7,6 @@ return new class extends Action
 {
   public function handle()
   {
-    return Inertia::render('JoshuaAnderton/Home');
+    return Inertia::render('Pages/JoshuaAnderton/Home');
   }
 };

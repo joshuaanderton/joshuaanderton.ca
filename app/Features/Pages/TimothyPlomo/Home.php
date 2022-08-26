@@ -9,6 +9,6 @@ class Home extends Action
 {
   public function handle()
   {
-    return Inertia::render('TimothyPlomo/Home');
+    return Inertia::render('Pages/TimothyPlomo/Home');
   }
 }
