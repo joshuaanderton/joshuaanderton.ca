@@ -66,12 +66,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/auth.git",
-                "reference": "2090bd968649aca9c833615e6a001d6167ef3d62"
+                "reference": "c175b1ebc5a9c6719b3ecf9a04e36bd61eeb8e63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/auth/zipball/2090bd968649aca9c833615e6a001d6167ef3d62",
-                "reference": "2090bd968649aca9c833615e6a001d6167ef3d62",
+                "url": "https://api.github.com/repos/blazervel/auth/zipball/c175b1ebc5a9c6719b3ecf9a04e36bd61eeb8e63",
+                "reference": "c175b1ebc5a9c6719b3ecf9a04e36bd61eeb8e63",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                 "issues": "https://github.com/blazervel/auth/issues",
                 "source": "https://github.com/blazervel/auth/tree/master"
             },
-            "time": "2022-08-26T21:50:24+00:00"
+            "time": "2022-08-26T22:13:27+00:00"
         },
         {
             "name": "blazervel/blazervel",
@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/ui.git",
-                "reference": "d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661"
+                "reference": "d36c0c73bc2485692d7109eff795433b6c7caca6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/ui/zipball/d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661",
-                "reference": "d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661",
+                "url": "https://api.github.com/repos/blazervel/ui/zipball/d36c0c73bc2485692d7109eff795433b6c7caca6",
+                "reference": "d36c0c73bc2485692d7109eff795433b6c7caca6",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "issues": "https://github.com/blazervel/ui/issues",
                 "source": "https://github.com/blazervel/ui/tree/master"
             },
-            "time": "2022-08-26T21:49:55+00:00"
+            "time": "2022-08-26T22:13:03+00:00"
         },
         {
             "name": "blazervel/workspaces",
