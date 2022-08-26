@@ -7,14 +7,37 @@ if (App::environment(['production', 'staging'])) :
   URL::forceScheme('https');
 endif;
 
-Route::domain(config('subdomains.music'))->group(function ($router) {
-  Route::get('/', Pages\Music::class)->name('music');
+
+// Work/Resume Site
+
+Route::domain('joshuaanderton.{ext}')->group(function () {
+  Route::get('/', Pages\Resume\Home::class)->name('dev.home');
+  Route::get('chat', fn () => view('chat'))->name('chat');
 });
 
-Route::get('/', Pages\Home::class)->name('home');
+Route::domain('gettingtoramen.com')->group(function () {
+  Route::get('/', Pages\Resume\Home::class)->name('gtr.home');
+  Route::get('chat', fn () => view('chat'))->name('chat');
+});
 
-Route::domain('gettingtoramen.com')->group(fn () => (
-  Route::get('/', Pages\Home::class)->name('home')
+
+// Joshua Anderton Music Site
+
+Route::domain('music.joshuaanderton.test')->group(fn () => (
+  Route::get('/', Pages\JoshuaAnderton\Home::class)->name('ja.home')
 ));
 
-Route::get('chat', fn () => view('chat'))->name('chat');
+Route::domain('joshuaandertonband.com')->group(fn () => (
+  Route::get('/', Pages\JoshuaAnderton\Home::class)->name('ja.home')
+));
+
+
+// Timothy Plomo Site
+
+Route::domain('timothyplomo.joshuaanderton.test')->group(fn () => (
+  Route::get('/', Pages\TimothyPlomo\Home::class)->name('ja.home')
+));
+
+Route::domain('timothyplomo.com')->group(fn () => (
+  Route::get('/', Pages\TimothyPlomo\Home::class)->name('tp.home')
+));

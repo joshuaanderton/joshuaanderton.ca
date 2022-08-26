@@ -78,6 +78,8 @@ module.exports = {
       colors: {
         theme: colors.lavender,
         chrome: colors.lavenderchrome,
+        'theme-tp': colors.sage,
+        'chrome-tp': colors.sagechrome,
       }
     },
   },

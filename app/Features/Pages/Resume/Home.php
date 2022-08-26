@@ -1,12 +1,12 @@
 <?php
 
-use Blazervel\Feature\Action;
 use Inertia\Inertia;
+use Blazervel\Feature\Action;
 
 return new class extends Action
 {
   public function handle()
   {
-    return Inertia::render('Music');
+    return Inertia::render('Resume/Home');
   }
 };
