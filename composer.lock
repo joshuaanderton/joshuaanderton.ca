@@ -66,12 +66,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/auth.git",
-                "reference": "b8d2da87ebcf0108a650ae13022a2f78e21992b1"
+                "reference": "2090bd968649aca9c833615e6a001d6167ef3d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/auth/zipball/b8d2da87ebcf0108a650ae13022a2f78e21992b1",
-                "reference": "b8d2da87ebcf0108a650ae13022a2f78e21992b1",
+                "url": "https://api.github.com/repos/blazervel/auth/zipball/2090bd968649aca9c833615e6a001d6167ef3d62",
+                "reference": "2090bd968649aca9c833615e6a001d6167ef3d62",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                 "issues": "https://github.com/blazervel/auth/issues",
                 "source": "https://github.com/blazervel/auth/tree/master"
             },
-            "time": "2022-08-25T23:20:49+00:00"
+            "time": "2022-08-26T21:50:24+00:00"
         },
         {
             "name": "blazervel/blazervel",
@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/ui.git",
-                "reference": "96d384c6a6eff60e571c3f2b66b8de911005e38f"
+                "reference": "d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/ui/zipball/96d384c6a6eff60e571c3f2b66b8de911005e38f",
-                "reference": "96d384c6a6eff60e571c3f2b66b8de911005e38f",
+                "url": "https://api.github.com/repos/blazervel/ui/zipball/d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661",
+                "reference": "d252c6e48a8f4efc8f4bd52cbcf1e16ef54f6661",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "issues": "https://github.com/blazervel/ui/issues",
                 "source": "https://github.com/blazervel/ui/tree/master"
             },
-            "time": "2022-08-25T23:20:21+00:00"
+            "time": "2022-08-26T21:49:55+00:00"
         },
         {
             "name": "blazervel/workspaces",
@@ -340,12 +340,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blazervel/workspaces.git",
-                "reference": "06aa8f966f844432ecaf7d48217c92e3c6d89749"
+                "reference": "c35ea0519003c6c0e7562df64828aa5769273ccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blazervel/workspaces/zipball/06aa8f966f844432ecaf7d48217c92e3c6d89749",
-                "reference": "06aa8f966f844432ecaf7d48217c92e3c6d89749",
+                "url": "https://api.github.com/repos/blazervel/workspaces/zipball/c35ea0519003c6c0e7562df64828aa5769273ccc",
+                "reference": "c35ea0519003c6c0e7562df64828aa5769273ccc",
                 "shasum": ""
             },
             "require": {
@@ -386,7 +386,7 @@
                 "issues": "https://github.com/blazervel/workspaces/issues",
                 "source": "https://github.com/blazervel/workspaces/tree/master"
             },
-            "time": "2022-08-22T23:43:15+00:00"
+            "time": "2022-08-26T21:50:35+00:00"
         },
         {
             "name": "brick/math",
