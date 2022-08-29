@@ -23,7 +23,7 @@ Route::domain('gettingtoramen.com')->group(function () {
 
 // Joshua Anderton Music Site
 
-Route::domain('music.joshuaanderton.test')->group(fn () => (
+Route::domain('music.joshuaanderton.{ext}')->group(fn () => (
   Route::get('/', Pages\JoshuaAnderton\Home::class)->name('ja.home')
 ));
 
