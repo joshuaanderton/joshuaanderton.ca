@@ -8,17 +8,33 @@ if (App::environment(['production', 'staging'])) :
 endif;
 
 
-// Work/Resume Site
+// Software Work/Resume Site
 
 Route::domain('joshuaanderton.{ext}')->group(function () {
-  Route::get('/', Pages\Resume\Home::class)->name('dev.home');
+  Route::get('/', Pages\Polarize\Home::class)->name('dev.home');
+  Route::get('chat', fn () => view('chat'))->name('chat');
+});
+
+Route::domain('polarize.{ext}')->group(function () {
+  Route::get('/', Pages\Polarize\Home::class)->name('polarize.home');
   Route::get('chat', fn () => view('chat'))->name('chat');
 });
 
 Route::domain('gettingtoramen.com')->group(function () {
-  Route::get('/', Pages\Resume\Home::class)->name('gtr.home');
+  Route::get('/', Pages\Polarize\Home::class)->name('gtr.home');
   Route::get('chat', fn () => view('chat'))->name('chat');
 });
+
+// Ximena Portfolio Site
+
+Route::domain('ximenaalexandra.joshuaanderton.test')->group(fn () => (
+  Route::get('/', Pages\XimenaAlexandra\Home::class)->name('ja.home')
+));
+
+Route::domain('ximenaalexandra.com')->group(fn () => (
+  Route::get('/', Pages\XimenaAlexandra\Home::class)->name('tp.home')
+));
+
 
 
 // Joshua Anderton Music Site

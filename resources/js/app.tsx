@@ -7,7 +7,7 @@ import '../css/app.css'
 const appName = import.meta.env.VITE_APP_NAME || 'Blazervel'
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => title || appName,
   resolve: (name) => resolvePage(name, import.meta.glob('./Pages/**/*.jsx')),
   setup({ el, App, props }) {
     return render(<App {...props} />, el)
