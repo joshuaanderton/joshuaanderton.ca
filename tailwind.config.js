@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const tailwindColors = require('tailwindcss/colors')
 
 const colors = {
   sage: {
@@ -80,6 +80,8 @@ module.exports = {
         chrome: colors.lavenderchrome,
         'theme-tp': colors.sage,
         'chrome-tp': colors.sagechrome,
+        'theme-xa': tailwindColors.gray,
+        'chrome-xa': tailwindColors.gray,
       }
     },
   },
