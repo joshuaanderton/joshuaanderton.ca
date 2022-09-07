@@ -1,5 +1,5 @@
 import React from 'preact/compat'
-import { Head } from '@appModules/@inertiajs/inertia-react'
+import { Head } from '@inertiajs/inertia-react'
 import { Image, Container } from '@blazervel/components'
 
 export default function () {
