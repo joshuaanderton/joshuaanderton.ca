@@ -1,5 +1,5 @@
 import React from 'preact/compat'
-import { Image, Container } from '@blazervel/components'
+import { Image, Container } from '@blazervel/ui/components'
 
 export default function () {
   return (

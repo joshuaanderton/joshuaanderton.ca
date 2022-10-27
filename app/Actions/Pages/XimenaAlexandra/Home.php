@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Features\Pages\XimenaAlexandra;
+namespace App\Actions\Pages\XimenaAlexandra;
 
 use Inertia\Inertia;
-use Blazervel\Feature\Action;
+use Blazervel\Actions\Action;
 
 class Home extends Action
 {

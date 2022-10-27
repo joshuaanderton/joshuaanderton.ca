@@ -1,6 +1,6 @@
 import React from 'preact/compat'
 import { Head } from '@inertiajs/inertia-react'
-import { Image, Container } from '@blazervel/components'
+import { Image, Container } from '@blazervel/ui/components'
 
 export default function () {
   return (
@@ -34,101 +34,78 @@ export default function () {
         <Container>
           <article className="relative z-20 mt-12 md:mt-24 prose md:prose-xl prose-invert text-chrome-300">
 
-            <h2 className="font-medium">Teams I’ve worked with</h2>
+            <h2 className="font-medium">Teams I've worked with</h2>
             <ul>
-
-              <li>
-                <div>
-                  Fullstack PHP Contractor (Laravel, Vue, React, Livewire)
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Polarize Technologies Inc.</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Senior TALL Stack Developer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">ScholarPath</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Head of Product &amp; Fullstack Ruby on Rails Developer (via <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://trailblazer.to">Trailblazer.to</a>)
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Userfeed</span> by <span className="font-medium text-white">AdReform</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Fullstack Ruby on Rails Developer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Glass Canvas</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Fullstack PHP (Silverstripe, AWS, etc) Developer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">PraiseCharts</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Fullstack PHP (Magento, Custom, etc) Developer and Digital Marketer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Tryten</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  WordPress Developer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Dazil</span>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  Fullstack PHP Developer
-                </div>
-                <div className="text-base">
-                  <span className="mr-1">at</span>
-                  <span className="font-medium text-white">Joshua Anderton Design</span> (clients: <span className="font-medium text-white">Pinnacle Hotels</span>, <span className="font-medium text-white">Bazinga!</span>, <span className="font-medium text-white">Shirmar Construction</span>, <span className="font-medium text-white">Plazus</span>, …)
-                </div>
-              </li>
-
+              {[
+                { title: 'Fullstack Laravel Contractor (owner)', company: 'Polarize Technologies Inc.', tasks: 'Laravel, Livewire/AlpineJS, InertiaJS, Vue, React, TypeScript, TailwindCSS',  clients: [{name: 'Transistor.fm', href: 'https://transistor.fm'}, {name: 'EmailOctopus.com', href: 'https://emailoctopus.com'}, {name: 'New England Patriots', href: 'https://www.patriots.com'}]},
+                { title: 'Senior Fullstack Laravel Developer',   company: 'ScholarPath',                tasks: 'Laravel, Livewire/AlpineJS, TailwindCSS'},
+                { title: 'Head of Product',                      company: 'Userfeed by AdReform',       tasks: 'Marketing (Video, Social, etc.), Sales, Support, Fullstack Ruby on Rails Development'},
+                { title: 'Frontend Developer',                   company: 'Glass Canvas',               tasks: 'React, Bootstrap CSS, Fullstack Ruby on Rails, Google APIs'},
+                { title: 'Fullstack PHP & Digital Marketing',    company: 'PraiseCharts',               tasks: 'PHP, MySQL, WordPress, Silverstripe, AWS) '},
+                { title: 'Fullstack PHP Developer',              company: 'Tryten',                     tasks: '(Magento, Custom, etc) Developer and Digital Marketer'},
+                { title: 'WordPress Developer',                  company: 'Dazil',                      tasks: 'WordPress, Bootstrap CSS'},
+                { title: 'Podcast & Video Production (owner)',   company: 'Podmelon & Videomelon',      tasks: 'Podcast Production, Video Production, Graphic & Video FX Design', clients: [{name: 'The Good'},        {name: 'Made With Grit'}, {name: 'Building Astropad'},    {name: 'Failory Podcast'}]},
+                { title: 'Fullstack PHP Contractor (owner)',     company: 'Joshua Anderton Design',     tasks: 'WordPress, PHP, MySQL, Magento',                                  clients: [{name: 'Pinnacle Hotels'}, {name: 'Bazinga!'},       {name: 'Shirmar Construction'}, {name: 'Plazus'}]},
+              ].map(item => (
+                <li key={item.title}>
+                  <div>
+                    {item.title} ({item.skills})
+                  </div>
+                  <div className="text-base">
+                    <span className="mr-1">at</span>
+                    <span className="font-medium text-white">
+                      {item.company}
+                    </span>
+                  </div>
+                </li>
+              ))}
             </ul>
             
-            <h2 className="font-medium">Projects I’ve worked on</h2>
+            <h2 className="font-medium">Projects I've worked on</h2>
             <ul>
-              <li><a target="_blank" href="https://meeps.app" className="font-medium text-white no-underline hover:underline">Meeps</a> - Public member directories <span className="text-chrome-600">(partnered with <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://twitter.com/mijustin">@mijustin</a>)</span></li>
-              <li><a target="_blank" href="https://progbar.co" className="font-medium text-white no-underline hover:underline">ProgBar by Meeps</a> - Share your goals and progress <span className="text-chrome-600">(partnered with <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://twitter.com/mijustin">@mijustin</a>)</span></li>
-              <li><a target="_blank" href="https://podmelon.com" className="font-medium text-white no-underline hover:underline">Podmelon</a> - Quality podcast editing</li>
-              <li><a target="_blank" href="https://upscribe.com" className="font-medium text-white no-underline hover:underline">Upscribe</a> - Email marketing solution <span className="text-chrome-600">(sold)</span></li>
-              <li><a target="_blank" href="https://billingly.com" className="font-medium text-white no-underline hover:underline">Billingly</a> - Dunning emails &amp; SMS <span className="text-chrome-600">(sold)</span></li>
-              <li><span className="font-medium text-white">Tiers</span> - Pricing page builder and A/B testing for SaaS <span className="text-chrome-600">(retired)</span></li>
-              <li><span className="font-medium text-white">Kids Learning App</span> - Built in Objective C &amp; Swift for iOS</li>
-              <li><span className="font-medium text-white">“Smelly Math” Math Game</span> - Built in Objective C for iOS</li>
+              {[
+                { title: 'Salestream.app',               description: '', stack: 'Laravel, InertiaJS, TailwindCSS',         href: 'https://salestream.app'},
+                { title: 'Meeps',                        description: '', stack: 'Laravel, TailwindCSS, Livewire/AlpineJS', href: 'https://progbar.co',    disclaimer: () => <>partnered with <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://twitter.com/mijustin">@mijustin</a></>},
+                { title: 'ProgBar by Meeps',             description: '', stack: 'Laravel, TailwindCSS, Livewire/AlpineJS', href: 'https://twitter.com',   disclaimer: () => <>partnered with <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://twitter.com/mijustin">@mijustin</a></>},
+                { title: 'Upscribe',                     description: '', stack: 'Laravel, TailwindCSS, Livewire/AlpineJS', href: 'https://upscribe.com',  disclaimer: () => <>sold</>},
+                { title: 'Billingly',                    description: '', stack: 'Laravel, TailwindCSS, Livewire/AlpineJS', href: 'https://billingly.com', disclaimer: () => <>sold</>},
+                { title: 'Tiers',                        description: '', stack: 'Laravel, TailwindCSS, Livewire/AlpineJS', href: null,                    disclaimer: () => <>retired</>},
+                { title: 'Kids Learning App',            description: '', stack: 'IOS App',                                 href: null},
+                { title: '“Smelly Math” Kids Math Game', description: '', stack: 'IOS App',                                 href: null},
+              ].map(item => (
+                <li key={item.title}>
+
+                  {item.href ? (
+                    <a target="_blank" href={item.href} className="font-medium text-white no-underline hover:underline">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+
+                  {item.description}
+                  
+                  {item.disclaimer || false && (
+                    <span className="text-chrome-600">(<item.disclaimer />)</span>
+                  )}
+
+                </li>
+              ))}
+              
+              
+              Share your goals and progress <span className="text-chrome-600">(partnered with <a className="font-normal text-inherit hover:no-underline" target="_blank" href="https://twitter.com/mijustin">@mijustin</a>)</span>
+              
+              Quality podcast editing
+              
+              Email marketing solution <span className="text-chrome-600">(sold)</span>
+              
+              Dunning emails &amp; SMS <span className="text-chrome-600">(sold)</span>
+              
+              Pricing page builder and A/B testing for SaaS <span className="text-chrome-600">(retired)</span>
+              
+              Built in Objective C &amp; Swift for iOS
+              
+              Built in Objective C for iOS
             </ul>
 
             <div className="text-base flex items-center md:justify-end space-x-3 mt-12 py-5 border-t border-chrome-800">

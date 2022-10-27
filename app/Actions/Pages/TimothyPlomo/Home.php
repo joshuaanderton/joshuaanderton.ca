@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Features\Pages\TimothyPlomo;
+namespace App\Actions\Pages\TimothyPlomo;
 
 use Inertia\Inertia;
-use Blazervel\Feature\Action;
+use Blazervel\Actions\Action;
 
 class Home extends Action
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Blazervel\Feature\Action;
+use Blazervel\Actions\Action;
 use Inertia\Inertia;
 
 return new class extends Action
