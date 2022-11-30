@@ -15,26 +15,33 @@ export default function () {
       <main>
 
         <Container>
-          <div className="relative group pb-6 pt-64 sm:pt-72 md:pt-0">
-            <div className="hidden md:block absolute inset-0 md:relative z-0 max-w-full md:max-w-[50%] overflow-hidden">
-              <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t md:bg-gradient-to-l opacity-60 from-theme-900"></div>
-              <Image div src="images/headshot.png" className="h-0 pb-[150%] md:rounded-bl-[4rem] -ml-12 -mt-12 md:mt-0 md:ml-0" />
+          <div className="border-b-2 border-chrome-800 sm:border-none flex sm:block relative group py-6 sm:pt-0">
+            
+            <div className="hidden sm:block absolute inset-0 sm:relative z-0 max-w-full sm:max-w-[50%] overflow-hidden">
+              <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t sm:bg-gradient-to-l opacity-60 from-theme-900"></div>
+              <Image div src="images/headshot.png" className="h-0 pb-[150%] sm:rounded-bl-[4rem] -ml-12 -mt-12 sm:mt-0 sm:ml-0" />
             </div>
-            <div className="opacity-40 hidden md:block absolute top-[80%] right-0 max-w-[50%] overflow-hidden">
+
+            <div className="opacity-40 hidden sm:block absolute top-[80%] right-0 max-w-[50%] overflow-hidden">
               <div className="absolute z-10 h-full w-full block inset-0 bg-gradient-to-t from-chrome-900 via-chrome-900"></div>
-              <Image src="images/headshot.png" className="grayscale transition-all rotate-180 opacity-80 md:rounded-bl-[4rem]" />
+              <Image src="images/headshot.png" className="grayscale transition-all rotate-180 opacity-80 sm:rounded-bl-[4rem]" />
             </div>
-            <div className="max-w-sm sm:max-w-xl md:max-w-full md:absolute relative z-10 md:top-24 md:left-1/2 md:-ml-24 md:pr-12">
-              <h1 className="md:flex md:flex-col font-bold text-3xl sm:text-5xl md:text-6xl text-theme-200 leading-tight md:leading-[4.5rem]">
-                <span>Fullstack </span>
-                <span>Developer </span>
-                <span className="whitespace-nowrap grayscale">in Vancouver 🇨🇦</span>
+            
+            <Image div src="images/headshot.png" className="mr-6 min-w-0 flex-shrink-0 w-40 h-40 rounded-lg sm:hidden" style="background-size: 180%; background-position: -69px -10px" />
+
+            <div className="max-w-sm sm:max-w-full sm:absolute relative z-10 sm:top-24 sm:left-1/2 sm:-ml-24 sm:pr-12 mt-8 sm:mt-0">
+              <h1 className="sm:flex sm:flex-col sm:space-y-1.5 font-bold text-3xl sm:text-5xl md:text-6xl text-theme-200">
+                <div>Fullstack </div>
+                <div>Developer </div>
+                <div className="whitespace-nowrap grayscale">in Vancouver 🇨🇦</div>
               </h1>
             </div>
+
           </div>
+
         </Container>
 
-        <Container className="mt-12 md:mt-0 relative">
+        <Container className="mt-8 sm:mt-0 relative">
 
           <div className="relative z-20 prose md:prose-xl prose-invert text-chrome-300">
           
