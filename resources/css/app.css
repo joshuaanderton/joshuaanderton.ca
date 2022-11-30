@@ -1,3 +1,4 @@
+@import './modern-era';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

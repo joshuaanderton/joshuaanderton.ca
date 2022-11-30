@@ -1,4 +1,5 @@
-const tailwindColors = require('tailwindcss/colors')
+const tailwindColors = require('tailwindcss/colors'),
+      defaultTheme = require('tailwindcss/defaultTheme')
 
 const colors = {
   sage: {
@@ -55,6 +56,32 @@ const colors = {
     '800': '#444048',
     '900': '#28262B'
   },
+  teal: {
+    DEFAULT: '#1DA5A5',
+    '50': '#D4F7F7',
+    '100': '#C2F4F4',
+    '200': '#A0EEEE',
+    '300': '#7DE8E8',
+    '400': '#5AE2E2',
+    '500': '#38DCDC',
+    '600': '#23C7C7',
+    '700': '#1DA5A5',
+    '800': '#157575',
+    '900': '#0C4545'
+  },
+  tealChrome: {
+    DEFAULT: '#447E7E',
+    '50': '#DEEDED',
+    '100': '#D1E6E6',
+    '200': '#B6D8D8',
+    '300': '#9CC9C9',
+    '400': '#81BBBB',
+    '500': '#67ADAD',
+    '600': '#529898',
+    '700': '#447E7E',
+    '800': '#305A5A',
+    '900': '#1D3535'
+  }
 }
 
 module.exports = {
@@ -71,17 +98,17 @@ module.exports = {
 
   theme: {
     extend: {
-      // fontFamily: {
-      //   sans: ['ModernEra', ...defaultTheme.fontFamily.sans],
-      //   mono: ['ModernEraMono', ...defaultTheme.fontFamily.mono]
-      // },
+      fontFamily: {
+        'sans': ['ModernEra', ...defaultTheme.fontFamily.sans],
+        'mono': ['ModernEraMono', ...defaultTheme.fontFamily.mono],
+      },
       colors: {
-        theme: colors.lavender,
-        chrome: colors.lavenderchrome,
+        theme: colors.teal,
+        chrome: colors.tealChrome,
         'theme-tp': colors.sage,
         'chrome-tp': colors.sagechrome,
-        'theme-xa': tailwindColors.gray,
-        'chrome-xa': tailwindColors.gray,
+        'theme-jab': colors.lavenderchrome,
+        'chrome-jab': tailwindColors.neutral
       }
     },
   },
