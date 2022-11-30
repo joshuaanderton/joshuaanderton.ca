@@ -7,6 +7,7 @@
         "blaze:dev": "(php artisan octane:start --watch) & vite"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.4",
         "@heroicons/react": "^2.0.13",
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-react": "^0.8.0",
