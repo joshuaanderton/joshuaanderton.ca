@@ -1,5 +1,5 @@
 import React, { useEffect } from 'preact/compat'
-import { Head } from '@inertiajs/inertia-react'
+import { Head } from '@inertiajs/react'
 import { Image, Container, Icon } from '@blazervel-ui/components'
 
 export default function () {
@@ -11,6 +11,17 @@ export default function () {
   return (
     <div className="px-2 bg-gradient-to-b from-chrome-900 via-chrome-900 to-black">
       <Head title="Joshua Anderton (Senior Laravel Dev)" />
+
+      <div className="fixed left-0 top-0 z-[100000] w-full h-[100vh] pointer-events-none">
+        <div
+          className="absolute w-full h-full left-0 top-0 z-10 pointer-events-none"
+          style={{
+            backgroundImage: 'url("/images/noise.png")',
+            backgroundPosition: '50% center',
+            backgroundSize: '10% 10%'
+          }}
+        ></div>
+      </div>
 
       <main>
 
