@@ -38,3 +38,21 @@ fields:
       listable: hidden
       instructions_position: above
       visibility: visible
+      sets:
+        calendly_embed_block:
+          display: 'Calendly Embed'
+          fields:
+            -
+              handle: html_field
+              field:
+                html: |-
+                  <!-- Calendly inline widget begin -->
+                  <div class="calendly-inline-widget" data-url="https://calendly.com/joshuaanderton?hide_landing_page_details=1" style="min-width:320px;height:630px;"></div>
+                  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                  <!-- Calendly inline widget end -->
+                display: 'HTML Field'
+                type: html
+                icon: html
+                listable: hidden
+                instructions_position: above
+                visibility: visible
