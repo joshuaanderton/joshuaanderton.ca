@@ -1,0 +1,27 @@
+
+<div class="prose prose-lg prose-invert text-chrome-300 flex-1" x-data="{ showAll: false }">
+  <h2>Jobs</h2>
+  <ul class="!space-y-7 list-none pl-0 [&>li]:px-0">
+    {{ resume:jobs }}
+      <li x-show="{{ index }} < 3 || showAll">
+        <span class="leading-none text-lg">
+          {{ title }}
+        </span>
+        <div class="text-base">
+          <span class="mr-1">at</span>
+          <span class="font-medium text-white">{{ company }}</span>
+        </div>
+        <div class="relative text-xs -mx-1 flex flex-wrap">
+          {{ skills }}
+            <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+              {{ value }}
+            </span>
+          {{ /skills }}
+        </div>
+      </li>
+    {{ /resume:jobs }}
+  </ul>
+  <div x-show="!showAll" class="flex pt-3">
+    <button @click="showAll = true" type="button" class="text-sm px-3 py-1 border border-chrome-900 hover:bg-chrome-900 text-chrome-700 font-medium rounded transition-colors duration-300">Load More</button>
+  </div>
+</div>

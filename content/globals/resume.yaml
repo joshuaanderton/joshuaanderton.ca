@@ -1,0 +1,244 @@
+title: Resume
+data:
+  jobs:
+    -
+      id: lk1bbduq
+      title: 'Fullstack Laravel Contractor (owner)'
+      company: 'Polarize Technologies Inc.'
+      skills:
+        - Laravel
+        - Livewire/AlpineJS
+        - InertiaJS
+        - Vue
+        - React
+        - TypeScript
+        - TailwindCSS
+      clients:
+        -
+          name: Transistor.fm
+          href: 'https://transistor.fm'
+          type: client
+          enabled: true
+        -
+          name: EmailOctopus.com
+          href: 'https://emailoctopus.com'
+          type: client
+          enabled: true
+        -
+          name: 'New England Patriots'
+          href: 'https://www.patriots.com'
+          type: client
+          enabled: true
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Senior Fullstack Laravel Developer'
+      company: ScholarPath
+      skills:
+        - Laravel
+        - Livewire/AlpineJS
+        - TailwindCSS
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Head of Product'
+      company: 'Userfeed by AdReform'
+      skills:
+        - 'Marketing (Video/Social)'
+        - Sales
+        - Support
+        - 'Ruby on Rails'
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Frontend Developer'
+      company: 'Glass Canvas'
+      skills:
+        - React
+        - 'Bootstrap CSS'
+        - 'Ruby on Rails'
+        - 'Google APIs'
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Fullstack PHP & Digital Marketing'
+      company: PraiseCharts
+      skills:
+        - PHP
+        - MySQL
+        - WordPress
+        - Silverstripe
+        - AWS
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Fullstack PHP Developer'
+      company: Tryten
+      skills:
+        - Magento
+        - Custom
+        - 'Developer and Digital Marketer'
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'WordPress Developer'
+      company: Dazil
+      skills:
+        - WordPress
+        - 'Bootstrap CSS'
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Podcast & Video Production (owner)'
+      company: 'Podmelon & Videomelon'
+      skills:
+        - 'Podcast Production'
+        - 'Video Production'
+        - 'Graphic/Video FX'
+      clients:
+        -
+          name: 'The Good'
+          type: client
+          enabled: true
+        -
+          name: 'Made With Grit'
+          type: client
+          enabled: true
+        -
+          name: 'Building Astropad'
+          type: client
+          enabled: true
+        -
+          name: 'Failory Podcast'
+          type: client
+          enabled: true
+      type: job
+      enabled: true
+    -
+      id:
+      title: 'Fullstack PHP Contractor (owner)'
+      company: 'Joshua Anderton Design'
+      skills:
+        - WordPress
+        - PHP
+        - MySQL
+        - Magento
+      clients:
+        -
+          name: 'Pinnacle Hotels'
+          type: client
+          enabled: true
+        -
+          name: Bazinga!
+          type: client
+          enabled: true
+        -
+          name: 'Shirmar Construction'
+          type: client
+          enabled: true
+        -
+          name: Plazus
+          type: client
+          enabled: true
+      type: job
+      enabled: true
+  projects:
+    -
+      id:
+      title: Salestream.app
+      description: 'Real-time sales and support via livestream'
+      stack:
+        - Laravel
+        - InertiaJS
+        - TailwindCSS
+      href: 'https://salestream.app'
+      cofounder: 'Kurtis Anderton'
+      cofounder_link: 'https://ca.linkedin.com/in/kurtis-anderton-62576b16b'
+      type: project
+      enabled: true
+    -
+      id:
+      title: Meeps
+      description: 'Modern Membership Software'
+      stack:
+        - Laravel
+        - TailwindCSS
+        - Livewire/AlpineJS
+      href: 'https://meeps.app'
+      cofounder: 'mijustin'
+      cofounder_link: 'https://twitter.com/mijustin'
+      type: project
+      enabled: true
+    -
+      id:
+      title: 'ProgBar by Meeps'
+      description: 'Share your goals and progress'
+      stack:
+        - Laravel
+        - TailwindCSS
+        - Livewire/AlpineJS
+      href: 'https://progbar.co'
+      cofounder: 'mijustin'
+      cofounder_link: 'https://twitter.com/mijustin'
+      type: project
+      enabled: true
+    -
+      title: Upscribe
+      description: 'Simple email marketing'
+      stack:
+        - Laravel
+        - TailwindCSS
+        - Livewire/AlpineJS
+      href: 'https://upscribe.com'
+      cofounder: null
+      sold: 2020
+      retired: null
+      type: project
+      enabled: true
+    -
+      title: Billingly
+      description: 'Dunning emails & SMS'
+      stack:
+        - Laravel
+        - TailwindCSS
+        - Livewire/AlpineJS
+      href: 'https://billingly.com'
+      cofounder: null
+      sold: 2019
+      retired: null
+      type: project
+      enabled: true
+    -
+      title: Tiers
+      description: 'Pricing page builder and A/B testing for SaaS'
+      stack:
+        - Laravel
+        - TailwindCSS
+        - Livewire/AlpineJS
+      href: null
+      cofounder: null
+      sold: null
+      retired: 2019
+      type: project
+      enabled: true
+    -
+      title: 'Kids Learning App'
+      description: 'Coloring IOS app for kids'
+      stack: 'IOS App'
+      href: null
+      type: project
+      enabled: true
+    -
+      title: '“Smelly Math” Kids Math Game'
+      description: 'Kids math game and equation generator'
+      stack: 'IOS App'
+      href: null
+      type: project
+      enabled: true
