@@ -24,12 +24,3 @@
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
-
-@font-face {
-  font-family: 'ModernEraMono';
-  src: url('../fonts/modern-era/ModernEraMono-Medium.woff') format('woff'),
-       url('../fonts/modern-era/ModernEraMono-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
