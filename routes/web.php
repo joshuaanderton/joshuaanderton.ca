@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 //    'title' => 'Example'
 // ]);
 
-Route::view('haptics');
+// Route::view('haptics');
