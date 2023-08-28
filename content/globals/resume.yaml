@@ -2,9 +2,23 @@ title: Resume
 data:
   jobs:
     -
+      id: AL70GM0f
+      title: 'Marketing Engineer'
+      company: Transistor.fm
+      company_website: 'https://transistor.fm'
+      skills:
+        - Laravel
+        - 'Ruby on Rails'
+        - AlpineJS
+        - TailwindCSS
+      type: job
+      enabled: true
+      current: true
+    -
       id: lk1bbduq
       title: 'Fullstack Laravel Contractor (owner)'
       company: 'Polarize Technologies Inc.'
+      company_website: null
       skills:
         - Laravel
         - Livewire/AlpineJS
@@ -15,36 +29,43 @@ data:
         - TailwindCSS
       clients:
         -
+          id: EbyONJSQ
           name: Transistor.fm
           href: 'https://transistor.fm'
           type: client
           enabled: true
         -
+          id: K7KgLzJt
           name: EmailOctopus.com
           href: 'https://emailoctopus.com'
           type: client
           enabled: true
         -
+          id: UyWnZFDT
           name: 'New England Patriots'
           href: 'https://www.patriots.com'
           type: client
           enabled: true
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: 3WKzVI80
       title: 'Senior Fullstack Laravel Developer'
       company: ScholarPath
+      company_website: null
       skills:
         - Laravel
         - Livewire/AlpineJS
         - TailwindCSS
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: QGBgse2F
       title: 'Head of Product'
       company: 'Userfeed by AdReform'
+      company_website: null
       skills:
         - 'Marketing (Video/Social)'
         - Sales
@@ -52,10 +73,12 @@ data:
         - 'Ruby on Rails'
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: PUOBC6h4
       title: 'Frontend Developer'
       company: 'Glass Canvas'
+      company_website: null
       skills:
         - React
         - 'Bootstrap CSS'
@@ -63,10 +86,12 @@ data:
         - 'Google APIs'
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: Hb92fxru
       title: 'Fullstack PHP & Digital Marketing'
       company: PraiseCharts
+      company_website: null
       skills:
         - PHP
         - MySQL
@@ -75,56 +100,68 @@ data:
         - AWS
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: m1mGV1jf
       title: 'Fullstack PHP Developer'
       company: Tryten
+      company_website: null
       skills:
         - Magento
         - Custom
         - 'Developer and Digital Marketer'
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: ff0wIztK
       title: 'WordPress Developer'
       company: Dazil
+      company_website: null
       skills:
         - WordPress
         - 'Bootstrap CSS'
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: CtDKezCs
       title: 'Podcast & Video Production (owner)'
       company: 'Podmelon & Videomelon'
+      company_website: null
       skills:
         - 'Podcast Production'
         - 'Video Production'
         - 'Graphic/Video FX'
       clients:
         -
+          id: 5WeTd65E
           name: 'The Good'
           type: client
           enabled: true
         -
+          id: MZ0ds9lN
           name: 'Made With Grit'
           type: client
           enabled: true
         -
+          id: gVCOdJqj
           name: 'Building Astropad'
           type: client
           enabled: true
         -
+          id: kMhAECwt
           name: 'Failory Podcast'
           type: client
           enabled: true
       type: job
       enabled: true
+      current: false
     -
-      id:
+      id: Tvs8AXSo
       title: 'Fullstack PHP Contractor (owner)'
       company: 'Joshua Anderton Design'
+      company_website: null
       skills:
         - WordPress
         - PHP
@@ -132,26 +169,31 @@ data:
         - Magento
       clients:
         -
+          id: 02DjNlND
           name: 'Pinnacle Hotels'
           type: client
           enabled: true
         -
+          id: aoKJcGqD
           name: Bazinga!
           type: client
           enabled: true
         -
+          id: pA5LzGro
           name: 'Shirmar Construction'
           type: client
           enabled: true
         -
+          id: ktyn6s0D
           name: Plazus
           type: client
           enabled: true
       type: job
       enabled: true
+      current: false
   projects:
     -
-      id:
+      id: ZZXsVH9k
       title: Salestream.app
       description: 'Real-time sales and support via livestream'
       stack:
@@ -163,8 +205,9 @@ data:
       cofounder_link: 'https://ca.linkedin.com/in/kurtis-anderton-62576b16b'
       type: project
       enabled: true
+      current: false
     -
-      id:
+      id: wgi6NOb4
       title: Meeps
       description: 'Modern Membership Software'
       stack:
@@ -172,12 +215,13 @@ data:
         - TailwindCSS
         - Livewire/AlpineJS
       href: 'https://meeps.app'
-      cofounder: 'mijustin'
+      cofounder: mijustin
       cofounder_link: 'https://twitter.com/mijustin'
       type: project
       enabled: true
+      current: false
     -
-      id:
+      id: BjnelTKJ
       title: 'ProgBar by Meeps'
       description: 'Share your goals and progress'
       stack:
@@ -185,11 +229,13 @@ data:
         - TailwindCSS
         - Livewire/AlpineJS
       href: 'https://progbar.co'
-      cofounder: 'mijustin'
+      cofounder: mijustin
       cofounder_link: 'https://twitter.com/mijustin'
       type: project
       enabled: true
+      current: false
     -
+      id: sK0SN9Da
       title: Upscribe
       description: 'Simple email marketing'
       stack:
@@ -197,12 +243,12 @@ data:
         - TailwindCSS
         - Livewire/AlpineJS
       href: 'https://upscribe.com'
-      cofounder: null
       sold: 2020
-      retired: null
       type: project
       enabled: true
+      current: false
     -
+      id: 4FZ81gIB
       title: Billingly
       description: 'Dunning emails & SMS'
       stack:
@@ -210,35 +256,35 @@ data:
         - TailwindCSS
         - Livewire/AlpineJS
       href: 'https://billingly.com'
-      cofounder: null
       sold: 2019
-      retired: null
       type: project
       enabled: true
+      current: false
     -
+      id: 0eoh7WD6
       title: Tiers
       description: 'Pricing page builder and A/B testing for SaaS'
       stack:
         - Laravel
         - TailwindCSS
         - Livewire/AlpineJS
-      href: null
-      cofounder: null
-      sold: null
       retired: 2019
       type: project
       enabled: true
+      current: false
     -
+      id: THgu1XK5
       title: 'Kids Learning App'
       description: 'Coloring IOS app for kids'
       stack: 'IOS App'
-      href: null
       type: project
       enabled: true
+      current: false
     -
+      id: EtLXEl4O
       title: '“Smelly Math” Kids Math Game'
       description: 'Kids math game and equation generator'
       stack: 'IOS App'
-      href: null
       type: project
       enabled: true
+      current: false
