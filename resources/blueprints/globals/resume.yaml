@@ -23,6 +23,17 @@ sections:
                     instructions_position: above
                     visibility: visible
                 -
+                  handle: company_website
+                  field:
+                    input_type: url
+                    antlers: false
+                    display: Company Website
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
                   handle: title
                   field:
                     input_type: text
@@ -76,6 +87,16 @@ sections:
                     display: Clients
                     type: replicator
                     icon: replicator
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: current
+                  field:
+                    default: true
+                    display: Current
+                    type: toggle
+                    icon: toggle
                     listable: hidden
                     instructions_position: above
                     visibility: visible
@@ -138,7 +159,7 @@ sections:
                   field:
                     input_type: url
                     antlers: false
-                    display: Co-founder Link
+                    display: 'Co-founder Link'
                     type: text
                     icon: text
                     listable: hidden
@@ -149,7 +170,7 @@ sections:
                   field:
                     input_type: number
                     antlers: false
-                    display: Sold Year
+                    display: 'Sold Year'
                     type: text
                     icon: text
                     listable: hidden
@@ -160,7 +181,7 @@ sections:
                   field:
                     input_type: number
                     antlers: false
-                    display: Retired Year
+                    display: 'Retired Year'
                     type: text
                     icon: text
                     listable: hidden

@@ -1,10 +1,63 @@
 <section class="site-container">
-  <div class="relative flex items-center py-12 space-x-6">
-    <img class="rounded-full h-[200px] max-h-full bg-gradient-to-br from-theme-600/10 to-theme-600/70" src="/assets/headshot-square.png" />
+  <div class="relative flex items-center space-x-6">
+    <img class="rounded-full max-w-[33%] md:max-w-[200px] h-auto bg-gradient-to-br from-theme-600/10 to-theme-600/70" src="/assets/headshot-square.png" />
     <h1 class="relative z-10 sm:flex sm:flex-col sm:space-y-1.5 font-bold text-3xl sm:text-5xl md:text-6xl text-theme-200">
       <div>Fullstack </div>
       <div>Developer </div>
       <div class="whitespace-nowrap grayscale">in Vancouver</div>
     </h1>
+  </div>
+</section>
+
+<section class="site-container">
+  <div class="prose prose-lg prose-invert text-chrome-300 relative z-20">
+    {{ resume:jobs }}
+      {{ if current }}
+        <div class="flex items-start gap-4">
+          <div class="shrink-0">
+            <svg class="text-white w-10 h-auto mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+              <path d="M72 119.9c-2.6 0-4.8-2.1-4.8-4.8V28.9c0-2.6 2.1-4.8 4.8-4.8 2.6 0 4.8 2.1 4.8 4.8v86.2c0 2.6-2.2 4.8-4.8 4.8zM52 76.8H29c-2.6 0-4.8-2.1-4.8-4.8 0-2.7 2.1-4.8 4.8-4.8h23c2.6 0 4.8 2.1 4.8 4.8 0 2.7-2.2 4.8-4.8 4.8zM115.1 76.8H92c-2.6 0-4.8-2.1-4.8-4.8 0-2.7 2.1-4.8 4.8-4.8h23c2.6 0 4.8 2.1 4.8 4.8 0 2.7-2.1 4.8-4.7 4.8z"></path>
+              <path d="M72 144c-39.7 0-72-32.3-72-72S32.3 0 72 0s72 32.3 72 72-32.3 72-72 72zM72 9.6C37.6 9.6 9.6 37.6 9.6 72s28 62.4 62.4 62.4 62.4-28 62.4-62.4S106.4 9.6 72 9.6z"></path>
+            </svg>
+          </div>
+          <div class="space-y-2 flex-1">
+            <div class="leading-none text-lg">Ruby on Rails Developer &amp; Digital Marketer</div>
+
+            {{ if company_website }}
+            <a href="{{ company_website }}" target="_blank" class="no-underline">
+            {{ /if }}
+
+            <span class="text-base leading-none group font-medium">
+              <span class="mr-1 text-chrome-400 font-normal">at</span>
+              <span class="font-medium text-white">{{ company }}</span>
+              {{ if company_website }}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 text-theme-800 transition-colors duration-300 group-hover:text-theme-400 inline relative -right-1 -top-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>
+              </svg>
+              {{ /if }}
+            </span>
+
+            {{ if company_website }}
+            </a>
+            {{ /if }}
+
+            <div class="relative text-xs -mx-1 flex flex-wrap">
+              <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+                Marketing
+              </span>
+              <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+                TailwindCSS + AlpineJS
+              </span>
+              <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+                Statamic CMS
+              </span>
+              <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+                Ruby on Rails
+              </span>
+            </div>
+          </div>
+        </div>
+      {{ /if }}
+    {{ /resume:jobs }}
   </div>
 </section>

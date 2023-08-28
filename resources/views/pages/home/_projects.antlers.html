@@ -2,9 +2,9 @@
 
 <div class="prose prose-lg prose-invert text-chrome-300 flex-1" x-data="{ showAll: false }">
   <h2>Projects</h2>
-  <ul class="!space-y-7 list-none pl-0 [&>li]:px-0">
+  <ul x-data="{ counter: 0 }" class="!space-y-7 list-none pl-0 [&>li]:px-0">
     {{ resume:projects }}
-      <li x-show="{{ index }} < 3 || showAll">
+      <li x-data="{ index: $data.counter++ }" x-show="index < 3 || showAll">
         <a href="{{ href }}" class="leading-none no-underline hover:underline text-lg">
           <span>{{ title }}</span>
           <svg

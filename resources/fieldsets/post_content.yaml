@@ -56,3 +56,4 @@ fields:
                 listable: hidden
                 instructions_position: above
                 visibility: visible
+      container: assets
