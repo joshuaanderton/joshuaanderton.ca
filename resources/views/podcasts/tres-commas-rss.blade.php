@@ -15,11 +15,11 @@
     <language>en</language>
     <pubDate>Wed, 30 Aug 2023 10:35:34 +0000</pubDate>
     <lastBuildDate>Wed, 30 Aug 2023 19:55:49 +0000</lastBuildDate>
-    <link>http://ramen.fm</link>
+    <link>https://polarize.tech</link>
     <image>
       <url>{{ $image }}</url>
-      <title>Getting To Ramen</title>
-      <link>http://ramen.fm</link>
+      <title>Tres Commas</title>
+      <link>https://polarize.tech</link>
     </image>
     <itunes:category text="Business">
       <itunes:category text="Entrepreneurship"/>
