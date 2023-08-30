@@ -13,6 +13,7 @@ class TresCommasRss
             'subdomain' => 'tres-commas',
             'guid' => '9a042732-53af-42cb-8ad5-631beb361832',
             'description' => 'Listen in as I navigate the slow SaaS ramp of death while asking for help along the way from people like Justin Jackson, Matt Wensing, and others who have gone before me...',
+            'image' => 'https://polarize.s3.us-west-2.amazonaws.com/podcasts/tres-commas/episode-1.png',
             'owner_name' => 'Joshua Anderton',
             'owner_email' => 'joshua@polarize.tech',
             'author' => 'Joshua Anderton',
@@ -22,6 +23,8 @@ class TresCommasRss
                    'number' => 1,
                    'title' => 'Head of Product at Userfeed.io',
                    'author' => 'Joshua Anderton',
+                   'image' => 'https://polarize.s3.us-west-2.amazonaws.com/podcasts/tres-commas/episode-1.png',
+                   'audio' => 'https://polarize.s3.us-west-2.amazonaws.com/podcasts/tres-commas/episode-1.mp3',
                    'description' => '<p>Joshua interviews the new Head of Product at Userfeed.io...</p><p><strong>Links &amp; Resources</strong></p><ul>
 <li><a href="https://listen.madewithgrit.fm/episodes/14-a-big-announcement-about-the-future-of-userfeed">Made with Grit podcast episode</a></li>
 <li><a href="https://twitter.com/LandonB32/status/1223238346924838912?s=20">Landon\'s announcement on Twitter</a></li>
