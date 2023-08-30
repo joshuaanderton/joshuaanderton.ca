@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Actions\Podcasts;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // ]);
 
 // Route::view('haptics');
+Route::get('tres-commas.{ext?}', Podcasts\TresCommasRss::class);
