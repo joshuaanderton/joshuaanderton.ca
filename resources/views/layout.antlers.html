@@ -1,17 +1,14 @@
 <!doctype html>
-<html lang="{{ site:short_locale }}" class="dark bg-theme-950">
+<html lang="{{ site:short_locale }}" class="h-full bg-neutral-50">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title ?? site:name }}</title>
-        <link rel="shortcut icon" href="/assets/headshot-square.png"/>
+        <link rel="shortcut icon" href="/images/jasper/linen-ghost.png"/>
         {{ vite src="resources/js/site.js" }}
     </head>
-    <body class="relative font-sans antialiased min-h-screen flex flex-col">
-        {{ partial:noise }}
-        {{ partial:header }}
+    <body class="font-sans antialiased h-full">
         {{ template_content }}
-        {{ partial:footer }}
     </body>
 </html>

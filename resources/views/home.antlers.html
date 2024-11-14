@@ -1,10 +1,16 @@
-<div class="space-y-12 py-12">
+<div class="flex flex-col flex-1 relative h-screen px-8 overflow-x-hidden">
 
-  {{ partial:pages.home.hero }}
+  <div class="texture-layer"></div>
 
-  <section class="site-container flex flex-col md:flex-row gap-x-6 gap-y-12">
-    {{ partial:pages.home.jobs }}
-    {{ partial:pages.home.projects }}
-  </section>
+  <div class="mx-auto flex flex-col items-center bg-gradient-to-tr from-neutral-950 to-neutral-900 h-screen">
+    <div class="z-50 inline-flex flex-wrap justify-end text-center bg-neutral-50 text-neutral-950 text-[16vw] md:text-[8vw] leading-[.56] font-felt font-extrabold uppercase whitespace-nowrap">
+      <span>Joshua</span> <span>Anderton</span>
+    </div>
+
+    <div class="relative w-full p-12">
+      {{ svg src="squid" class="text-white/20 absolute mix-blend-screen w-[60vw] md:w-[35vw] h-auto top-0 -left-[18vw] md:-left-[8vw]" }}
+      {{ svg src="narwhal" class="text-white/10 absolute mix-blend-screen w-[60vw] md:w-[35vw] h-auto -right-[18vw] top-[4vw] md:-right-[8vw] md:top-[14vw]" }}
+    </div>
+  </div>
 
 </div>
