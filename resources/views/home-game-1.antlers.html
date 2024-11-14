@@ -1,0 +1,81 @@
+<script>
+
+</script>
+
+<div
+  x-data="{
+
+    x: 0,
+
+    y: -90,
+
+    faceForward: true,
+
+    init() {
+      window.addEventListener('keydown', function (e) {
+        console.log(e.key)
+        switch (e.key) {
+          case 'ArrowRight':
+            $data.x = $data.x - 2
+            $data.faceForward = true
+            break
+          case 'ArrowLeft':
+            $data.x = $data.x + 2
+            $data.faceForward = false
+            break
+          case 'ArrowUp':
+            $data.y = $data.y + 2
+            break
+          case 'ArrowDown':
+            $data.y = $data.y - 2
+            break
+        }
+
+        if ($data.x > 0) {
+          $data.x = 0
+        }
+        if ($data.x < -300) {
+          $data.x = -300
+        }
+        if ($data.y > 0) {
+          $data.y = 0
+        }
+        if ($data.y < -90) {
+          $data.y = -90
+        }
+
+        console.log(`${$data.x}% ${$data.y}%`, $data.faceForward)
+      })
+    }
+  }"
+  class="relative h-screen w-screen flex items-end justify-center overflow-hidden"
+>
+
+  <div
+    :style="{ left: `${x}%`, top: `${y}%` }"
+    class="inset-y-0 w-[400vw] absolute transition-all duration-300 h-full bg-repeat grid grid-cols-4 items-end"
+  >
+    <img src="/images/jasper/room-1.png" class="h-auto w-screen shrink-0" />
+    <img src="/images/jasper/room-1.png" class="h-auto w-screen shrink-0" style="transform: scaleX(-1);" />
+    <img src="/images/jasper/room-2.png" class="h-auto w-screen shrink-0" />
+    <img src="/images/jasper/room-2.png" class="h-auto w-screen shrink-0" style="transform: scaleX(-1);" />
+  </div>
+
+  <div
+    x-data="{
+      levitate: false,
+      disappear: false,
+      rand: (max = 1000, min = 0) => Math.random() * (max - min) + min,
+      init() {
+        setInterval(() => this.levitate = !this.levitate, 1000)
+        setInterval(() => this.disappear = !this.disappear, 1000)
+      }
+    }"
+    :style="{ transform: !faceForward ? 'scaleX(-1)' : '', backgroundImage: `url('/images/jasper/linen-ghost-shadowless.png')` }"
+    :class="{ '-top-1': levitate, 'top-1': !levitate, 'opacity-70': disappear, 'opacity-80': !disappear }"
+    class="w-[12rem] bg-no-repeat h-auto bg-contain blur-[1px] bg-center aspect-[1/2] relative transition-all duration-1000 inline-block"
+  >
+
+  </div>
+
+</div>

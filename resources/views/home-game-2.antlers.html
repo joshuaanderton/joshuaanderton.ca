@@ -1,0 +1,109 @@
+<script>
+
+</script>
+
+<div
+  x-data="{
+
+    x: 0,
+
+    y: -90,
+
+    faceForward: true,
+
+    up: false,
+    right: false,
+    down: false,
+    left: false,
+
+    init() {
+      const handleKeyEvent = (e) => {
+        const enabled = e.type === 'keydown'
+        switch (e.key) {
+          case 'ArrowRight':
+            $data.right = enabled
+            break
+          case 'ArrowLeft':
+            $data.left = enabled
+            break
+          case 'ArrowUp':
+            $data.up = enabled
+            break
+          case 'ArrowDown':
+            $data.down = enabled
+            break
+        }
+      }
+
+      const handleControls = () => {
+        let timerU, timerR, timerB, timerL
+
+        if ($data.right) {
+          console.log('start right')
+          timerR = setInterval(() => $data.x = $data.x > -300 ? $data.x + 5 : -300, 1)
+        } else {
+          console.log('stop right')
+          clearInterval(timerR)
+        }
+
+        if ($data.left) {
+          timerL = setInterval(() => $data.x = $data.x > 0 ? $data.x - 5 : 0, 1)
+        } else {
+          clearInterval(timerL)
+        }
+
+        if ($data.up) {
+          timerU = setInterval(() => $data.y = $data.y < 0 ? $data.y + 5 : 0, 1)
+        } else {
+          clearInterval(timerU)
+        }
+
+        if ($data.down) {
+          timerB = setInterval(() => $data.y = $data.y > -90 ? $data.y - 5 : -90, 1)
+        } else {
+          clearInterval(timerB)
+        }
+
+        console.log(`${$data.x}% ${$data.y}%`, $data.faceForward)
+      }
+
+      window.addEventListener('keydown', handleKeyEvent)
+      window.addEventListener('keyup', handleKeyEvent)
+
+      $watch('up', handleControls)
+      $watch('right', handleControls)
+      $watch('down', handleControls)
+      $watch('left', handleControls)
+    }
+  }"
+  class="relative h-screen w-screen flex items-end justify-center overflow-hidden"
+>
+
+  <div
+    :style="{ left: `${x}%`, top: `${y}%` }"
+    class="inset-y-0 w-[400vw] absolute transition-all h-full bg-repeat grid grid-cols-4 items-end"
+  >
+    <img src="/images/jasper/room-1.png" class="h-auto w-screen shrink-0" />
+    <img src="/images/jasper/room-1.png" class="h-auto w-screen shrink-0" style="transform: scaleX(-1);" />
+    <img src="/images/jasper/room-2.png" class="h-auto w-screen shrink-0" />
+    <img src="/images/jasper/room-2.png" class="h-auto w-screen shrink-0" style="transform: scaleX(-1);" />
+  </div>
+
+  <div
+    x-data="{
+      levitate: false,
+      disappear: false,
+      rand: (max = 1000, min = 0) => Math.random() * (max - min) + min,
+      init() {
+        setInterval(() => this.levitate = !this.levitate, 1000)
+        setInterval(() => this.disappear = !this.disappear, 1000)
+      }
+    }"
+    :style="{ transform: !faceForward ? 'transform: scaleX(-1)' : '', backgroundImage: `url('/images/jasper/linen-ghost-shadowless.png')` }"
+    :class="{ '-top-1': levitate, 'top-1': !levitate, 'opacity-70': disappear, 'opacity-80': !disappear }"
+    class="w-[15rem] bg-no-repeat h-auto bg-contain blur-[1px] bg-center aspect-[1/2] relative transition-all duration-1000 inline-block"
+  >
+
+  </div>
+
+</div>

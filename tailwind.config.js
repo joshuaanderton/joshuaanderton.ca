@@ -73,13 +73,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
-        'mono': ['ModernEraMono', ...defaultTheme.fontFamily.mono],
+        'sans': ['Quilon', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         teal: colors.teal,
         theme: colors.teal,
-        chrome: colors.tealChrome
+        chrome: colors.tealChrome,
+        canvas: {
+          DEFAULT: '#fefae7',
+          '50': '#fefae7',
+          '100': '#faebad',
+          '200': '#f6de74',
+          '300': '#f2cb3a',
+          '400': '#f0b40f',
+          '500': '#ce8912',
+          '600': '#b5690d',
+          '700': '#91460d',
+          '800': '#703510',
+          '900': '#57290f',
+          '950': '#251003',
+        },
       }
     },
   },
@@ -88,5 +101,5 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
-  
+
 }

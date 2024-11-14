@@ -3,6 +3,9 @@ import {defineConfig} from 'vite'
 
 export default defineConfig({
     plugins: [
-        laravel(['resources/js/site.js']),
+        laravel({
+            input: ['resources/js/site.js'],
+            refresh: true
+        }),
     ],
 });
