@@ -1,5 +1,5 @@
-@import './satoshi';
-@import './modern-era-mono';
+@import 'https://api.fontshare.com/v2/css?f[]=kalam@1&f[]=comico@400&display=swap';
+@import '../fonts/handy-dandy/handy-dandy';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

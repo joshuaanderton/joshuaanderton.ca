@@ -1,0 +1,77 @@
+<div class="fixed left-0 top-0 z-[100000] w-full h-[100vh] pointer-events-none">
+  <div
+    class="absolute w-full h-full left-0 top-0 z-10 pointer-events-none"
+    style="background-image: url('/assets/noise.png'); background-position: 50% center; background-size: 10% 10%;"></div>
+</div>
+
+<div class="absolute z-0 inset-x-0 -top-24 bottom-0 bg-repeat [background-size:500px]" style="background-image: url('/assets/paper-graph.png')"></div>
+
+{{ svg:wobble-wave-divider class="rotate-1 absolute top-0 pointer-events-none z-[1000] -left-3 w-10 h-auto text-black/90" }}
+
+<div class="relative px-8 py-12 overflow-hidden min-h-screen text-neutral-800">
+
+
+  <div class="bg-[#fff7ee] -rotate-10 pt-8 pl-8 p-r-4 pb-2 absolute left-0 top-10">
+    {{ svg:badge class="w-40 h-auto text-[#ff3131]" }}
+  </div>
+
+  <div class="relative container px-6 mx-auto lg:max-w-5xl space-y-32">
+
+    <div class="flex items-center">
+      <div class="flex-1 relative">
+        {{ svg:hola class="max-w-[40rem] -rotate-3 relative z-[1]" }}
+        {{ svg:canada-leaf class="max-w-[20%] -mt-10 ml-auto mr-2 -rotate-12 relative" }}
+        {{ partial:content-blocks class="uppercase -rotate-3 prose font-handwritten !font-medium !text-neutral-800 [&>*]:!mb-0 [&>*]:!mt-2 mx-auto" }}
+      </div>
+      {{ partial:magic-photo
+          class="!absolute md:!relative right-20 top-20 md:right-[inherit] md:top-[inherit] max-w-[10rem] md:max-w-[20rem] md:-ml-10"
+          video="/assets/josh/josh-sanfran-loop.mov"
+          image="/assets/josh/josh-sanfran.jpg"
+          caption="Not Vancouver" }}
+    </div>
+
+    <div class="flex gap-10 items-start justify-end">
+      <div class="relative w-[14rem] mt-12">
+        <div class="px-2 pt-3 pb-6 shadow-md bg-gradient-to-br from-[#FFF7EE] to-neutral-100 -rotate-4">
+          <img
+            class="w-full h-auto bg-gradient-to-br from-neutral-600/10 pt-2 grayscale to-neutral-200/70"
+            src="/assets/josh/josh-summer.png"
+            alt="Semi-recent headshot of Joshua Anderton" />
+        </div>
+        <div class="absolute top-10 -right-24 flex flex-col items-end">
+          <span class="font-bold font-handwritten lowercase w-28 text-center">This is me being <s>cool</s> me</span>
+          {{ svg src="handy-dandy/arrow-down-left" class="w-12 mr-14 h-auto text-black" }}
+        </div>
+      </div>
+      <div class="relative w-[40rem] rotate-2 group">
+        {{ svg:by-day }}
+        <span class="absolute -bottom-5 right-0 text-black text-8xl transistor-logo">
+          {{ svg src="handy-dandy/transistor-1" class="group-hover:hidden w-12 h-auto" }}
+          {{ svg src="handy-dandy/transistor-2" class="hidden group-hover:inline w-12 h-auto" }}
+        </span>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <div class="relative -rotate-3 w-[40rem] p-12 invert flex items-center justify-center">
+        {{ svg:by-night class="text-black relative z-[2]" }}
+        <div class="bg-white/90 blur-[1px] absolute z-0 inset-0"></div>
+      </div>
+    </div>
+
+    <section class="flex gap-6 [&_a]:group [&_a]:-m-1 [&_a]:p-1 [&_svg]:size-12 [&_svg]:fill-black">
+      <a aria-label="Follow Joshua on X" href="https://x.com/joshuaanderton">
+        {{ svg:x }}
+      </a>
+      <a aria-label="Follow Joshua on GitHub" href="https://github.com/joshuaanderton">
+        {{ svg:github }}
+      </a>
+      <a aria-label="Follow Joshua on LinkedIn" href="https://www.linkedin.com/in/joshuaanderton/">
+        {{ svg:linkedin }}
+      </a>
+    </section>
+
+    {{ svg src="handy-dandy/astrisk" class="w-12 h-auto" }}
+
+  </div>
+</div>

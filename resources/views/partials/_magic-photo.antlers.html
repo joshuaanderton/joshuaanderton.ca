@@ -1,0 +1,9 @@
+<div class="{{ class ?: '' }} relative px-2 pt-3 pb-6 shadow-md bg-gradient-to-br from-[#FFF7EE] to-neutral-100 rotate-6">
+  <video src="{{ video }}" poster="{{ image }}" autoplay loop muted playsinline class="rounded-sm opacity-80 grayscale"></video>
+  {{ if caption }}
+    <div class="absolute top-10 -right-24 flex flex-col items-end">
+      <span class="font-bold font-handwritten lowercase">{{ caption }}</span>
+      {{ svg src="handy-dandy/arrow-twirl-right" class="rotate-180 mr-10 w-24 h-auto text-black" }}
+    </div>
+  {{ /if}}
+</div>
