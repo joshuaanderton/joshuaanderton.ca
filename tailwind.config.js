@@ -62,19 +62,19 @@ const colors = {
 
 module.exports = {
   darkMode: 'class',
-
   content: [
     './resources/**/*.antlers.html',
     './resources/**/*.blade.php',
     './resources/**/*.vue',
     './content/**/*.md'
   ],
-
   theme: {
     extend: {
       fontFamily: {
         'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
         'mono': ['ModernEraMono', ...defaultTheme.fontFamily.mono],
+        'handwritten': ['Kalam', ...defaultTheme.fontFamily.sans],
+        'symbols': ['HandyDandy']
       },
       colors: {
         teal: colors.teal,
@@ -88,5 +88,5 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
-  
+
 }

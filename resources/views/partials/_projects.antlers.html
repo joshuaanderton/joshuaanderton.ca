@@ -1,0 +1,57 @@
+
+
+<div class="prose prose-lg prose-invert text-chrome-300 flex-1" x-data="{ showAll: false }">
+  <h2>Projects</h2>
+  <ul x-data="{ counter: 0 }" class="!space-y-7 list-none pl-0 [&>li]:px-0">
+    {{ resume:projects }}
+      <li x-data="{ index: $data.counter++ }" x-show="index < 3 || showAll">
+        <a href="{{ href }}" class="leading-none no-underline hover:underline text-lg">
+          <span>{{ title }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-3 h-3 text-theme-800 transition-colors duration-300 group-hover:text-theme-400 inline relative -right-1 -top-1"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+        <div class="text-base">
+          <span>{{ description }}</span>
+        </div>
+        <div class="relative text-xs -mx-1 flex flex-wrap">
+          {{ skills }}
+            <span class="text-[.6rem] tracking-wide rounded bg-chrome-800 font-mono text-theme-400 lowercase font-medium m-1 px-1 py-0">
+              {{ value }}
+            </span>
+          {{ /skills }}
+        </div>
+        {{ if cofounder || retired || sold }}
+          <div class="mt-2 font-bold text-chrome-600 text-xs">
+            {{ if cofounder }}
+              <div>
+                <span>Partnered with</span>
+                <a class="font-bold text-inherit hover:no-underline" target="_blank" href="{{ cofounder_link }}">
+                    {{ cofounder }}
+                </a>
+              </div>
+            {{ /if }}
+            <span>
+                {{ if sold }}
+                    Sold in {{ sold }}
+                {{ /if }}
+                {{ if retired }}
+                    Retired in {{ retired }}
+                {{ /if }}
+            </span>
+          </div>
+        {{ /if }}
+      </li>
+    {{ /resume:projects }}
+  </ul>
+  <div x-show="!showAll" class="flex pt-3">
+    <button @click="showAll = true" type="button" class="text-sm px-3 py-1 border border-chrome-900 hover:bg-chrome-900 text-chrome-700 font-medium rounded transition-colors duration-300">Load More</button>
+  </div>
+</div>

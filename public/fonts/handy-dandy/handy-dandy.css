@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Handy Dandy';
+  src: url('./HandyDandy-Regular.woff') format('woff'),
+       url('./HandyDandy-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

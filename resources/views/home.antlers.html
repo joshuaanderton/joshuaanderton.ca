@@ -1,10 +1,54 @@
-<div class="space-y-12 py-12">
+<div class="fixed left-0 top-0 z-[100000] w-full h-[100vh] pointer-events-none">
+  <div class="{{ [
+    'absolute',
+    'w-full',
+    'h-full',
+    'left-0',
+    'top-0',
+    'z-10',
+    'pointer-events-none',
+    "[background-image:_url('/assets/noise.png')]",
+    '[background-position:_50%_center]',
+    '[background-size:_220px_220px]',
+  ] | join(' ') }}"></div>
+</div>
 
-  {{ partial:pages.home.hero }}
+<div class="overflow-hidden min-h-screen text-neutral-700">
+  <div class="py-12 relative container px-6 mx-auto max-w-full min-h-screen md:max-w-3xl space-y-32">
+    <div class="flex items-center">
 
-  <section class="site-container flex flex-col md:flex-row gap-x-6 gap-y-12">
-    {{ partial:pages.home.jobs }}
-    {{ partial:pages.home.projects }}
-  </section>
+      <div class="flex-1 relative z-[1] space-y-8">
+        <section class="relative">
+          <div class="relative size-32">
+            {{ asset url="/assets/headshot-square.png" }}
+              <img src="{{ url }}" class="relative z-[1] inset-0 size-full rounded-full bg-gradient-to-br grayscale from-neutral-500 to-neutral-300" />
+            {{ /asset }}
+            <div class="absolute z-[3] top-0 -right-32 flex flex-col items-end">
+              <div class="font-bold font-handwritten">This is me,<br/> Joshua Anderton</div>
+              {{ svg src="handy-dandy/arrow-twirl-right" class="rotate-180 mr-16 w-24 h-auto text-black" }}
+            </div>
+          </div>
+          <div class="-mt-12 bg-[#fff7ee] shadow-md px-5 py-10 lg:px-10 -rotate-3">
+            {{ svg:hola class="relative z-[1]" }}
+          </div>
+        </section>
 
+        <section class="flex gap-6 [&_a]:group [&_a]:-m-1 [&_a]:p-1 [&_svg]:size-8">
+          <a aria-label="Follow Joshua on X" href="https://x.com/joshuaanderton">
+            {{ svg:x }}
+          </a>
+          <a aria-label="Follow Joshua on GitHub" href="https://github.com/joshuaanderton">
+            {{ svg:github }}
+          </a>
+          <a aria-label="Follow Joshua on LinkedIn" href="https://www.linkedin.com/in/joshuaanderton/">
+            {{ svg:linkedin }}
+          </a>
+        </section>
+
+      </div>
+
+      <div class="absolute z-0 -inset-x-[100rem] top-0 bottom-0 bg-repeat [background-size:400px]" style="background-image: url('/assets/paper-graph.png')"></div>
+
+    </div>
+  </div>
 </div>
