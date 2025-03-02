@@ -6,7 +6,6 @@ import applePodcastsIcon from './assets/apple-podcasts.svg?raw'
 import blueskyIcon from './assets/bluesky.svg?raw'
 import linkedinIcon from './assets/linkedin.svg?raw'
 import xIcon from './assets/x.svg?raw'
-// import andeRtonType from './assets/ande-rton.svg'
 
 function App() {
   return (
