@@ -2,7 +2,6 @@ import transistorLogo from './assets/transistor.svg?raw'
 import headshot from './assets/headshot.png'
 import clsx from 'clsx'
 
-import holaIcon from './assets/hola.svg?raw'
 import applePodcastsIcon from './assets/apple-podcasts.svg?raw'
 import blueskyIcon from './assets/bluesky.svg?raw'
 import linkedinIcon from './assets/linkedin.svg?raw'
