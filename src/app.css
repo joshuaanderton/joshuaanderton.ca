@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Satoshi", "sans-serif";
+  --font-serif: "Gambarino", "serif";
+  --bg-color: #FFFFFF;
+}
+
+body {
+  @apply bg-[var(--bg-color)];
+}
