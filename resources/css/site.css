@@ -1,9 +1,0 @@
-@import './satoshi';
-@import './modern-era-mono';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.site-container {
-  @apply container max-w-4xl mx-auto px-6 md:px-8;
-}
