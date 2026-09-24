@@ -49,7 +49,7 @@ Do not create a step for chat-only turns (questions, explanations) that change n
    ```bash
    tools/shots <slug> NN
    ```
-   It pushes the current state of `creations/<slug>/` (committed or not) to a scratch branch `shots/<slug>-NN`, runs `.github/workflows/creation-shots.yml` (Playwright + Chromium), downloads `steps/NN.webp` and `steps/NN-m.webp`, and deletes the scratch branch. Nothing is committed to the creation branch; the images go into the step commit in step 5.
+   It pushes the current state of `creations/<slug>/` (committed or not) to a scratch branch `shots/<slug>-NN`, runs `.github/workflows/creation-shots.yml` (Playwright: Chromium for desktop, WebKit for the iPhone), downloads `steps/NN.webp` and `steps/NN-m.webp`, and deletes the scratch branch. Nothing is committed to the creation branch; the images go into the step commit in step 5.
    - If the change is below the fold, add `--full-page` or `--anchor '#section'` and say so in `focus`.
    - Every screenshot stays in git history forever, so the workflow converts them to `.webp` (`cwebp -q 82`). If the repo later adopts Git LFS for `creations/**/steps/*`, follow `.gitattributes`.
    - If the workflow fails or `gh` isn't authenticated, stop and tell the user. Do not commit a step without its screenshot (except `under-the-hood`).
