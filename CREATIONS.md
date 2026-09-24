@@ -45,16 +45,14 @@ Do not create a step for chat-only turns (questions, explanations) that change n
 
 1. **Make the change** to `creations/<slug>/index.html` (or files).
 2. **Snapshot** (single-file only): `cp creations/<slug>/index.html creations/<slug>/steps/NN.html`
-3. **Screenshot** — desktop and mobile, light scheme:
+3. **Screenshot** — desktop (1440×900) and mobile (iPhone 13), light scheme. Screenshots are taken in GitHub Actions, not locally:
    ```bash
-   npx playwright screenshot --viewport-size=1440,900 --color-scheme=light --wait-for-timeout=600 \
-     "file://$PWD/creations/<slug>/index.html" creations/<slug>/steps/NN.png
-   npx playwright screenshot --device="iPhone 13" --color-scheme=light --wait-for-timeout=600 \
-     "file://$PWD/creations/<slug>/index.html" creations/<slug>/steps/NN-m.png
+   tools/shots <slug> NN
    ```
-   - If the change is below the fold, add `--full-page` or screenshot a local anchor (`index.html#section`) and say so in `focus`.
-   - Every screenshot stays in git history forever, so keep them small: if `cwebp` exists, convert to `.webp` (`cwebp -q 82 NN.png -o NN.webp`, delete the PNG) and reference the `.webp`. If the repo later adopts Git LFS for `creations/**/steps/*`, follow `.gitattributes`.
-   - If Playwright is unavailable, stop and tell the user. Do not commit a step without its screenshot (except `under-the-hood`).
+   It pushes the current state of `creations/<slug>/` (committed or not) to a scratch branch `shots/<slug>-NN`, runs `.github/workflows/creation-shots.yml` (Playwright + Chromium), downloads `steps/NN.webp` and `steps/NN-m.webp`, and deletes the scratch branch. Nothing is committed to the creation branch; the images go into the step commit in step 5.
+   - If the change is below the fold, add `--full-page` or `--anchor '#section'` and say so in `focus`.
+   - Every screenshot stays in git history forever, so the workflow converts them to `.webp` (`cwebp -q 82`). If the repo later adopts Git LFS for `creations/**/steps/*`, follow `.gitattributes`.
+   - If the workflow fails or `gh` isn't authenticated, stop and tell the user. Do not commit a step without its screenshot (except `under-the-hood`).
 4. **Append the step** to `process.json` (§5). Look at the screenshot before writing the note.
 5. **Commit** with the message format in §4. Stage only `creations/<slug>/` (`git add creations/<slug>/`). Never stage site code or another creation's files in a step commit.
 6. **Tag**: `git tag <slug>/step-NN`
@@ -72,7 +70,7 @@ creation(<slug>): step NN — <title, ≤ 6 words>
 Step: NN
 Kind: prompt | fix | pivot | polish | dead-end | under-the-hood | final
 Prompt: <the user's prompt, cleaned per §6, ≤ 400 chars; "…" if trimmed>
-Screenshot: creations/<slug>/steps/NN.png
+Screenshot: creations/<slug>/steps/NN.webp
 ```
 
 The last four lines are git trailers (blank line before them, `Key: value`, no blank lines between). They let the site be rebuilt from `git log --format='%(trailers)'` if `process.json` is ever lost.
