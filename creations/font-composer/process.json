@@ -1,0 +1,31 @@
+{
+  "slug": "font-composer",
+  "title": "Font Composer",
+  "kind": "Tools",
+  "summary": "Parametric sans-serif composer: fourteen shared parameters and a draggable master form drive the whole alphabet, with warp effects and OTF/WOFF export.",
+  "blurb": "Parametric sans-serif composer",
+  "cover": "steps/01.webp",
+  "started": "2026-08-25",
+  "published": null,
+  "embed": "index.html",
+  "live": "https://joshuaanderton.github.io/font-composer/",
+  "tools": [
+    "Claude Code"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "date": "2026-09-24",
+      "title": "Imported existing composer",
+      "kind": "prompt",
+      "prompt": "Add the font-composer tool (in a repo in the Joshuaanderton org/namespace on GitHub) as a creation to this website.",
+      "note": "Existing app from font-composer @28739b8, built as one file: master form, parameter sliders, warp effects, live preview. Desktop-only layout.",
+      "screenshot": "steps/01.webp",
+      "mobile": "steps/01-m.webp",
+      "snapshot": "steps/01.html",
+      "focus": null,
+      "convo": [],
+      "tag": "font-composer/step-01"
+    }
+  ]
+}
