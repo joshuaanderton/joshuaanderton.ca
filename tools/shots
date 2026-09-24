@@ -69,7 +69,9 @@ def main():
             '-f', f'step={args.step}', '-f', f'anchor={args.anchor}', '-f', f'full_page={str(args.full_page).lower()}')
         run_id = str(find_run(title, since))
         print(f'shots: waiting for run {run_id}…', file=sys.stderr)
-        subprocess.run(['gh', 'run', 'watch', run_id, '--exit-status', '--interval', '5'], stdout=subprocess.DEVNULL)
+        watch = subprocess.run(['gh', 'run', 'watch', run_id, '--exit-status', '--interval', '5'], stdout=subprocess.DEVNULL)
+        if watch.returncode != 0:
+            sys.exit(f'shots: run {run_id} failed; see `gh run view {run_id} --log-failed`')
         os.makedirs(steps_dir, exist_ok=True)
         run('gh', 'run', 'download', run_id, '--name', f'shots-{args.slug}-{args.step}', '--dir', steps_dir)
     finally:

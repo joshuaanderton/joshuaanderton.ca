@@ -54,11 +54,11 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Chromium, cwebp and Inter
+      - name: Install Chromium, WebKit, cwebp and Inter
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq webp fonts-inter
-          npx -y "$PLAYWRIGHT" install --with-deps chromium
+          npx -y "$PLAYWRIGHT" install --with-deps chromium webkit
 
       - name: Screenshot desktop and mobile (light scheme)
         run: |
@@ -66,7 +66,8 @@ jobs:
           url="file://$PWD/creations/$SLUG/index.html$ANCHOR"
           npx -y "$PLAYWRIGHT" screenshot --browser=chromium --viewport-size=1440,900 --color-scheme=light \
             --wait-for-timeout=600 $FULL_PAGE "$url" "out/$STEP.png"
-          npx -y "$PLAYWRIGHT" screenshot --browser=chromium --device="iPhone 13" --color-scheme=light \
+          # The iPhone preset runs in WebKit, like a real iPhone.
+          npx -y "$PLAYWRIGHT" screenshot --device="iPhone 13" --color-scheme=light \
             --wait-for-timeout=600 $FULL_PAGE "$url" "out/$STEP-m.png"
           for f in out/*.png; do cwebp -quiet -q 82 "$f" -o "${f%.png}.webp" && rm "$f"; done
           ls -la out
