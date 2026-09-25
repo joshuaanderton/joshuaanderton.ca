@@ -2,8 +2,6 @@ import type { SocialIconName } from '@/components/social-icon'
 
 export const site = {
   name: 'Joshua Anderton',
-  tagline: 'Websites, tools and experiments',
-  location: 'Victoria, BC',
   intro: 'Software developer from Victoria, BC.',
   // TODO: confirm the public contact address before launch.
   email: 'hello@joshuaanderton.ca',
@@ -14,7 +12,6 @@ export const site = {
   ],
   /** Parts of the site that are built but hidden for now. */
   show: {
-    creations: false,
     copyright: false,
   },
   links: [

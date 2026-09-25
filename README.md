@@ -1,6 +1,6 @@
 # joshuaanderton.ca
 
-Websites, tools and experiments by Joshua Anderton.
+Joshua Anderton's profile page.
 
 ```bash
 yarn install
@@ -9,5 +9,3 @@ yarn build   # static site in dist/
 ```
 
 - Design system: [polarize-ui](https://github.com/polarizetech/polarize-ui) (see `CLAUDE.md` § Design)
-- Creations (process posts built from git history): `CREATIONS.md`
-- Conversation logging: `CONVERSATIONS.md`

@@ -8,14 +8,8 @@ The site is built on **[polarize-ui](https://github.com/polarizetech/polarize-ui
 
 Rules that come with the system: Instrument Serif for headings, never uppercased; Inter for running text, never bold, never tracked; uppercase is always IBM Plex Mono (`.ui-label`); every colour is a token. Fonts are self-hosted by the package (no font CDN). Light and dark follow the reader's system setting (a `.dark` class set by the script in `index.html`). The X, GitHub and LinkedIn glyphs are `src/components/social-icon.tsx` (lucide has no brand icons).
 
-The home page is a profile only: portrait, one line (`site.intro`) and the social links. The creations list and creation pages are built but hidden while `site.show.creations` is false in `src/lib/site.ts`; with it off, every path renders the profile.
+The site is one page for now: a profile with the portrait, one line (`site.intro`) and the social links. Every path renders it. The creations system (process posts built from git history, `CREATIONS.md`, the Font Composer draft) was removed on 2026-09-25 and is in git history before that commit.
 
 The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`. Its specimen icons now live in polarize-ui (from v0.5.0): `<Specimen name="bee" />`, with the prompt for drawing more in its `SPECIMEN-ICONS.md`. New icons go there, not here.
 
 **Changing a component?** Do it upstream in polarize-ui. Every push to its `main` is a public release, and outside users are promised that a patch never breaks. **Read the first section of its `CLAUDE.md` (or `AGENTS.md`) before committing there:** mark breaking changes with `!:` or `BREAKING CHANGE:`, and prefer a deprecated alias to a removal. This repo picks up new releases by itself once a day (`.github/workflows/polarize-ui.yml`). If that run fails, a release broke something here and this repo needs a migration commit.
-
-## Creations
-
-When working in creations/, follow @CREATIONS.md exactly. Every visible change is a step: snapshot, screenshots, process.json entry, commit with trailers, tag.
-
-The site reads every `creations/*/process.json` (`src/lib/creations.ts`). Published creations get a post at `/creations/<slug>/`, and their files are served from `/creations/<slug>/files/` (`vite.config.ts`). Drafts show in dev only. The creations sections and nav link stay hidden until at least one creation exists (`hasCreations`).
