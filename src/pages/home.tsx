@@ -3,13 +3,14 @@ import { SearchIcon } from 'lucide-react'
 
 import { creations, hasCreations, kinds } from '@/lib/creations'
 import { bench, site } from '@/lib/site'
+import headshot from '@/assets/headshot.jpg'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Chip } from '@/components/chip'
 import { EmptyState } from '@/components/empty-state'
 import { FramedGrid } from '@/components/framed-grid'
+import { contentWidth } from '@/components/sheet'
 import { SpecimenTile } from '@/components/specimen-tile'
 import { SplitSheet } from '@/components/split-sheet'
 
@@ -42,7 +43,7 @@ export function Home() {
   return (
     <main>
       {hasCreations && (
-        <>
+        <div className={contentWidth}>
           <section
             id="creations"
             aria-labelledby="creations-title"
@@ -148,28 +149,33 @@ export function Home() {
               />
             )}
           </section>
-        </>
+        </div>
       )}
 
       <SplitSheet
         id="about"
         labelledBy="about-title"
         side={
-          <>
-            <Chip>About</Chip>
-            <AboutHeading
-              id="about-title"
-              className="mt-1 mb-2 text-[clamp(2.25rem,4.5vw,3.25rem)] leading-none font-semibold tracking-display"
-            >
-              Joshua Anderton
-            </AboutHeading>
-            <p className="max-w-[30rem] text-[clamp(1.125rem,1.6vw,1.3125rem)] leading-[1.45]">
-              Software developer living in Victoria, BC.
-            </p>
-            <p className="max-w-[30rem] text-[clamp(1.125rem,1.6vw,1.3125rem)] leading-[1.45]">
-              Off screen I solder cables, poke at signals and write songs. Dad first, everything else second.
-            </p>
-          </>
+          <div className="flex flex-col-reverse gap-6 min-[821px]:flex-row min-[821px]:items-end min-[821px]:justify-between">
+            <div className="flex flex-col gap-4">
+              <AboutHeading
+                id="about-title"
+                className="mt-1 mb-2 text-[clamp(2.25rem,4.5vw,3.25rem)] leading-none font-semibold tracking-display"
+              >
+                Joshua Anderton
+              </AboutHeading>
+              <p className="max-w-[30rem] text-[clamp(1.125rem,1.6vw,1.3125rem)] leading-[1.45]">
+                Software developer living in Victoria, BC.
+              </p>
+            </div>
+            <img
+              src={headshot}
+              alt="Portrait of Joshua Anderton"
+              width={320}
+              height={320}
+              className="size-[clamp(7rem,14vw,10rem)] shrink-0 rounded-none rounded-tl-soft object-cover"
+            />
+          </div>
         }
       >
         {site.show.bench && <FramedGrid items={bench} label="Things on my workbench" />}

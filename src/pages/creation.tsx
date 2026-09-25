@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Tabs } from '@/components/ui/tabs'
 import { Chip } from '@/components/chip'
 import { EmptyState } from '@/components/empty-state'
+import { contentWidth } from '@/components/sheet'
 
 const gutter = 'px-[clamp(1.25rem,8vw,7rem)]'
 
@@ -35,7 +36,7 @@ export function CreationPage({ slug }: { slug: string }) {
 
   if (!creation) {
     return (
-      <main className={cn(gutter, 'py-[clamp(3rem,7vw,5.5rem)]')}>
+      <main className={cn(contentWidth, gutter, 'py-[clamp(3rem,7vw,5.5rem)]')}>
         <EmptyState
           art="lock"
           message="That creation doesn't exist, or hasn't been published yet."
@@ -52,7 +53,7 @@ export function CreationPage({ slug }: { slug: string }) {
   const shots = creation.steps.filter((s) => s.screenshot)
 
   return (
-    <main>
+    <main className={contentWidth}>
       <PostHeader creation={creation} />
       <Embed creation={creation} />
       {shots.length > 1 && <Scrubber slug={creation.slug} steps={shots} />}
