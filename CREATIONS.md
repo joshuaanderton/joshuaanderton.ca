@@ -112,7 +112,7 @@ The last four lines are git trailers (blank line before them, `Key: value`, no b
 Rules:
 - `note` ≤ 25 words. Plain, factual. No "Now we…", no hype. The screenshots do the talking.
 - `title` ≤ 6 words, describes the change ("Darker palette", "Mobile nav fix"), not the effort.
-- `art`: no longer used (it picked a Specimen illustration before the 2026-09-25 redesign). The homepage list shows `cover` as the thumbnail.
+- `art`: no longer used (it picked a Specimen illustration before the 2026-09-25 redesign; those icons are now polarize-ui's `SPECIMENS`). The homepage list shows `cover` as the thumbnail.
 - `focus`: optional CSS selector or `#anchor` the post should zoom/scroll to when the change is small.
 - `convo`: the `id`s from `conversation.jsonl` for the user message(s) and reply behind this step. Read the file to get them; don't invent ids. The post uses them to show the full exchange and link to the PR comments.
 - Keep `steps` in order. Never delete a step; mark it `dead-end` instead.

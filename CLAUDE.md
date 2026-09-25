@@ -10,7 +10,7 @@ Rules that come with the system: Instrument Serif for headings, never uppercased
 
 The home page is a profile only: portrait, one line (`site.intro`) and the social links. The creations list and creation pages are built but hidden while `site.show.creations` is false in `src/lib/site.ts`; with it off, every path renders the profile.
 
-The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`.
+The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`. Its specimen icons now live in polarize-ui (from v0.5.0): `<Specimen name="bee" />`, with the prompt for drawing more in its `SPECIMEN-ICONS.md`. New icons go there, not here.
 
 ## Creations
 

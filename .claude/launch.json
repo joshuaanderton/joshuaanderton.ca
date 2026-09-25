@@ -23,6 +23,15 @@
         "--strictPort"
       ],
       "port": 5174
+    },
+    {
+      "name": "polarize-ui-storybook",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/joshuaanderton/Sites/polarize-ui && PATH=/Users/joshuaanderton/.local/share/fnm/aliases/default/bin:$PATH exec node_modules/.bin/storybook dev -p 6006 --no-open --ci"
+      ],
+      "port": 6006
     }
   ]
 }
