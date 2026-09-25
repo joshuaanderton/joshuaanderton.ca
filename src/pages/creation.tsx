@@ -33,7 +33,7 @@ export function CreationPage({ slug }: { slug: string }) {
           <p className="ui-label">Not found</p>
           <p className="ui-doc__lede mt-3">That creation doesn't exist, or hasn't been published yet.</p>
         </header>
-        <Button asChild variant="outline"><a href="/#creations">See all creations</a></Button>
+        <Button asChild variant="outline"><a href="/">Back to the home page</a></Button>
       </section>
     )
   }
@@ -55,7 +55,7 @@ export function CreationPage({ slug }: { slug: string }) {
       }
     >
       <p className="-mt-[var(--space-5)] mb-[var(--space-6)]">
-        <a href="/#creations" className="ui-article__topic text-[length:var(--text-sm)]">← All creations</a>
+        <a href="/" className="ui-article__topic text-[length:var(--text-sm)]">← Home</a>
       </p>
       <Embed creation={creation} />
       {shots.length > 1 && <Scrubber slug={creation.slug} steps={shots} />}

@@ -8,6 +8,8 @@ The site is built on **[polarize-ui](https://github.com/polarizetech/polarize-ui
 
 Rules that come with the system: Instrument Serif for headings, never uppercased; Inter for running text, never bold, never tracked; uppercase is always IBM Plex Mono (`.ui-label`); every colour is a token. Fonts are self-hosted by the package (no font CDN). Light and dark follow the reader's system setting (a `.dark` class set by the script in `index.html`). The X, GitHub and LinkedIn glyphs are `src/components/social-icon.tsx` (lucide has no brand icons).
 
+The home page is a profile only: portrait, one line (`site.intro`) and the social links. The creations list and creation pages are built but hidden while `site.show.creations` is false in `src/lib/site.ts`; with it off, every path renders the profile.
+
 The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`.
 
 ## Creations
