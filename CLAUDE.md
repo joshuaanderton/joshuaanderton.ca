@@ -12,6 +12,8 @@ The home page is a profile only: portrait, one line (`site.intro`) and the socia
 
 The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`. Its specimen icons now live in polarize-ui (from v0.5.0): `<Specimen name="bee" />`, with the prompt for drawing more in its `SPECIMEN-ICONS.md`. New icons go there, not here.
 
+**Changing a component?** Do it upstream in polarize-ui. Every push to its `main` is a public release, and outside users are promised that a patch never breaks. **Read the first section of its `CLAUDE.md` (or `AGENTS.md`) before committing there:** mark breaking changes with `!:` or `BREAKING CHANGE:`, and prefer a deprecated alias to a removal. This repo picks up new releases by itself once a day (`.github/workflows/polarize-ui.yml`). If that run fails, a release broke something here and this repo needs a migration commit.
+
 ## Creations
 
 When working in creations/, follow @CREATIONS.md exactly. Every visible change is a step: snapshot, screenshots, process.json entry, commit with trailers, tag.
