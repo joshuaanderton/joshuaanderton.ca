@@ -26,10 +26,9 @@ export function Home() {
           <ul className="mt-[var(--space-2)] flex flex-wrap gap-2">
             {site.links.map((link) => (
               <li key={link.href}>
-                <Button variant="outline" size="lg" asChild>
-                  <a href={link.href} target="_blank" rel="noopener">
+                <Button variant="outline" size="icon-lg" asChild>
+                  <a href={link.href} target="_blank" rel="noopener" aria-label={link.label}>
                     <SocialIcon name={link.icon} className="size-4" />
-                    {link.label}
                   </a>
                 </Button>
               </li>

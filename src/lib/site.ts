@@ -15,6 +15,7 @@ export const site = {
   /** Parts of the site that are built but hidden for now. */
   show: {
     creations: false,
+    copyright: false,
   },
   links: [
     { label: 'X', icon: 'x', href: 'https://x.com/joshuaanderton' },
