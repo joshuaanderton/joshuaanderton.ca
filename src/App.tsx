@@ -1,7 +1,9 @@
-import { ContactCard } from '@/components/contact-card'
-import { Sheet } from '@/components/sheet'
-import { SiteFooter } from '@/components/site-footer'
-import { SiteHeader } from '@/components/site-header'
+import { AuthorNote, Brand, Footer, Shell, SidebarMeta, SidebarSection } from '@polarizetech/polarize-ui/react'
+
+import headshot from '@/assets/headshot.jpg'
+import { SocialIcon } from '@/components/social-icon'
+import { hasCreations } from '@/lib/creations'
+import { site } from '@/lib/site'
 import { CreationPage } from '@/pages/creation'
 import { Home } from '@/pages/home'
 
@@ -11,15 +13,44 @@ function route(pathname: string) {
   return match ? <CreationPage slug={decodeURIComponent(match[1])} /> : <Home />
 }
 
+function Sidebar() {
+  const onHome = !window.location.pathname.startsWith('/creations/')
+  return (
+    <>
+      <AuthorNote
+        tagline={site.tagline}
+        name={site.name}
+        place={site.location}
+        avatar={headshot}
+        contactHref="#contact"
+      />
+      <SidebarSection
+        heading="On this site"
+        items={[
+          ...(hasCreations ? [{ label: 'Creations', href: '/#creations', current: onHome }] : []),
+          { label: 'Contact', href: '/#contact' },
+        ]}
+      />
+      <SidebarSection
+        heading="Elsewhere"
+        items={site.elsewhere.map((l) => ({ label: l.label, href: l.href, count: undefined }))}
+      />
+      <SidebarMeta
+        links={site.links.map((l) => ({ label: l.label, href: l.href, icon: <SocialIcon name={l.icon} className="size-4" /> }))}
+      />
+    </>
+  )
+}
+
 function App() {
   return (
     <>
-      <Sheet>
-        <SiteHeader />
+      <Shell brand={<Brand word={site.name} href="/" />} sidebar={<Sidebar />}>
         {route(window.location.pathname)}
-      </Sheet>
-      <ContactCard />
-      <SiteFooter />
+      </Shell>
+      <Footer brand={<Brand word={site.name} href="/" />} tagline={site.tagline}>
+        © <span className="tabular-nums">{new Date().getFullYear()}</span> {site.name} · {site.location}
+      </Footer>
     </>
   )
 }

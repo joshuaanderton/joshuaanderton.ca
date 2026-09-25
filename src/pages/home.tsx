@@ -1,22 +1,50 @@
 import { useMemo, useRef, useState } from 'react'
 import { SearchIcon } from 'lucide-react'
+import {
+  Button, Display, Input, PostList, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Standfirst,
+} from '@polarizetech/polarize-ui/react'
 
-import { creations, hasCreations, kinds } from '@/lib/creations'
-import { bench, site } from '@/lib/site'
-import headshot from '@/assets/headshot.jpg'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { EmptyState } from '@/components/empty-state'
-import { FramedGrid } from '@/components/framed-grid'
-import { contentWidth } from '@/components/sheet'
-import { SpecimenTile } from '@/components/specimen-tile'
-import { SplitSheet } from '@/components/split-sheet'
+import { creations, hasCreations, kinds, type Creation } from '@/lib/creations'
+import { site } from '@/lib/site'
 
 const ALL = 'all'
 
+function formatDate(iso: string) {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })
+}
+
+function badges(c: Creation) {
+  return (
+    <>
+      <span className="ui-pill">{c.kind}</span>
+      {c.isDraft ? <span className="ui-pill">Draft</span> : c.isNew ? <span className="ui-pill">New</span> : null}
+    </>
+  )
+}
+
 export function Home() {
+  return (
+    <>
+      <section aria-labelledby="intro-title" className="ui-doc">
+        <header className="ui-doc__head">
+          <p className="ui-label">About</p>
+          <Display level={2} className="mt-3 mb-4">
+            <span id="intro-title">{site.intro}</span>
+          </Display>
+          <Standfirst>
+            I build websites and small tools, and write up research on signals and the body at{' '}
+            <a className="text-[var(--pub-accent)] underline-offset-4 hover:underline" href="https://polarize.tech">polarize.tech</a>.
+          </Standfirst>
+        </header>
+      </section>
+
+      {hasCreations && <Creations />}
+      <Contact />
+    </>
+  )
+}
+
+function Creations() {
   const [term, setTerm] = useState('')
   const [kind, setKind] = useState(ALL)
   const searchRef = useRef<HTMLInputElement>(null)
@@ -30,10 +58,6 @@ export function Home() {
     )
   }, [term, kind])
 
-  const filtered = term.trim() !== '' || kind !== ALL
-  // With the creations sections hidden, About is the page's main heading.
-  const AboutHeading = hasCreations ? 'h2' : 'h1'
-
   function clearAll() {
     setTerm('')
     setKind(ALL)
@@ -41,145 +65,68 @@ export function Home() {
   }
 
   return (
-    <main>
-      {hasCreations && (
-        <div className={contentWidth}>
-          <section
-            id="creations"
-            aria-labelledby="creations-title"
-            className="rounded-bl-soft bg-panel px-[clamp(1.25rem,8vw,7rem)] pt-[clamp(2.5rem,6vw,4rem)] pb-[clamp(2rem,4vw,2.75rem)]"
-          >
-            <h1
-              id="creations-title"
-              className="mb-7 text-[clamp(2.5rem,5.5vw,3.75rem)] leading-none font-semibold tracking-display"
-            >
-              Latest creations
-            </h1>
+    <section id="creations" aria-labelledby="creations-title" className="mb-[var(--space-8)]">
+      <h2 id="creations-title" className="ui-label ui-main__heading">Creations</h2>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <label className="relative max-w-md flex-1 basis-80">
-                <span className="sr-only">Search creations</span>
-                <SearchIcon
-                  aria-hidden="true"
-                  className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2"
-                />
-                <Input
-                  ref={searchRef}
-                  type="search"
-                  value={term}
-                  onChange={(event) => setTerm(event.target.value)}
-                  placeholder="Search for a creation…"
-                  autoComplete="off"
-                  className="pl-[38px]"
-                />
-              </label>
+      <div className="mb-[var(--space-4)] flex flex-wrap items-center gap-2">
+        <label className="relative max-w-md flex-1 basis-72">
+          <span className="sr-only">Search creations</span>
+          <SearchIcon aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            ref={searchRef}
+            type="search"
+            value={term}
+            onChange={(event) => setTerm(event.target.value)}
+            placeholder="Search creations…"
+            autoComplete="off"
+            className="pl-9"
+          />
+        </label>
+        <Select value={kind} onValueChange={setKind}>
+          <SelectTrigger aria-label="Filter by type" className="w-40">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={ALL}>All types</SelectItem>
+            {kinds.map((k) => (
+              <SelectItem key={k} value={k}>{k}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {(term || kind !== ALL) && <Button variant="ghost" onClick={clearAll}>Clear</Button>}
+        <span aria-live="polite" className="ml-auto font-mono text-[length:var(--text-xs)] text-muted-foreground tabular-nums">
+          {results.length} {results.length === 1 ? 'creation' : 'creations'}
+        </span>
+      </div>
 
-              <Select value={kind} onValueChange={setKind}>
-                <SelectTrigger aria-label="Filter by type">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ALL}>All types</SelectItem>
-                  {kinds.map((k) => (
-                    <SelectItem key={k} value={k}>
-                      {k}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+      <PostList
+        empty="No creations match that search."
+        posts={results.map((c) => ({
+          href: c.url,
+          date: formatDate(c.date),
+          title: c.title,
+          description: c.blurb,
+          thumb: c.image ?? undefined,
+          badges: badges(c),
+        }))}
+      />
+    </section>
+  )
+}
 
-              <Button variant="link" onClick={clearAll} className="min-[821px]:ml-auto">
-                Clear all
-              </Button>
-            </div>
-          </section>
-
-          <section
-            aria-live="polite"
-            aria-label="Results"
-            className="px-[clamp(1.25rem,8vw,7rem)] pt-[clamp(2rem,4vw,3rem)] pb-[clamp(3rem,7vw,5.5rem)]"
-          >
-            <div className="mb-7 flex flex-wrap justify-between gap-4 text-[0.975rem]">
-              <span className="tabular-nums">
-                {results.length} {results.length === 1 ? 'creation' : 'creations'} found.
-              </span>
-              <span className="text-muted-foreground">Updated as they ship.</span>
-            </div>
-
-            {results.length > 0 ? (
-              <ul className="grid grid-cols-2 gap-2 min-[521px]:grid-cols-[repeat(auto-fill,minmax(min(100%,14.5rem),1fr))]">
-                {results.map((c) => (
-                  <li key={c.slug}>
-                    <SpecimenTile
-                      href={c.url}
-                      title={c.title}
-                      meta={c.blurb}
-                      art={c.art}
-                      image={c.image}
-                      badge={
-                        c.isDraft ? (
-                          <Badge className="ml-1.5">Draft</Badge>
-                        ) : c.isNew ? (
-                          <Badge className="ml-1.5">New</Badge>
-                        ) : null
-                      }
-                    />
-                  </li>
-                ))}
-              </ul>
-            ) : filtered ? (
-              <EmptyState
-                art="paper"
-                message="No creations match that search."
-                action={
-                  <Button variant="link" onClick={clearAll}>
-                    Clear filters
-                  </Button>
-                }
-              />
-            ) : (
-              <EmptyState
-                art="pencil"
-                message="Nothing is published yet. New creations show up here as they ship."
-                action={
-                  <Button variant="link" asChild>
-                    <a href="#contact">Get in touch</a>
-                  </Button>
-                }
-              />
-            )}
-          </section>
-        </div>
-      )}
-
-      <SplitSheet
-        id="about"
-        labelledBy="about-title"
-        side={
-          <div className="flex flex-col-reverse gap-6 min-[821px]:flex-row min-[821px]:items-end min-[821px]:justify-between">
-            <div className="flex flex-col gap-4">
-              <AboutHeading
-                id="about-title"
-                className="mt-1 mb-2 text-[clamp(2.25rem,4.5vw,3.25rem)] leading-none font-semibold tracking-display"
-              >
-                Joshua Anderton
-              </AboutHeading>
-              <p className="max-w-[30rem] text-[clamp(1.125rem,1.6vw,1.3125rem)] leading-[1.45]">
-                Software developer living in Victoria, BC.
-              </p>
-            </div>
-            <img
-              src={headshot}
-              alt="Portrait of Joshua Anderton"
-              width={320}
-              height={320}
-              className="size-[clamp(7rem,14vw,10rem)] shrink-0 rounded-none rounded-tl-soft object-cover"
-            />
-          </div>
-        }
+function Contact() {
+  return (
+    <section id="contact" aria-labelledby="contact-title" className="ui-article__summary !max-w-none">
+      <p id="contact-title" className="ui-label ui-article__summary-title">Contact</p>
+      <p className="mb-[var(--space-3)] max-w-[36rem] text-muted-foreground">
+        Got an idea, a question about something here, or a project in mind? Send me a note.
+      </p>
+      <a
+        href={`mailto:${site.email}`}
+        className="font-display text-[length:var(--display-2)] leading-tight break-words text-foreground underline decoration-1 underline-offset-[0.15em] hover:text-[var(--pub-accent)]"
       >
-        {site.show.bench && <FramedGrid items={bench} label="Things on my workbench" />}
-      </SplitSheet>
-    </main>
+        {site.email}
+      </a>
+    </section>
   )
 }
