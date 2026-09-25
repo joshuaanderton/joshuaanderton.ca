@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { cn } from '@/lib/utils'
+import { contentWidth } from './sheet'
 
 /**
  * Two columns: a panel side with bottom-aligned content, and a framed grid. Stacks at 820px.
@@ -21,12 +22,18 @@ export function SplitSheet({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn('grid border-t', children && 'min-[821px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]')}
+      className={cn(
+        'border-t bg-panel',
+        // Past the max width, the panel colour runs off the left edge and the grid's off the right.
+        children && 'min-[821px]:bg-[linear-gradient(to_right,var(--color-panel)_50%,var(--color-background)_50%)]',
+      )}
     >
-      <div className="flex flex-col gap-4 bg-panel px-[clamp(1.25rem,5vw,3.5rem)] pt-12 pb-[clamp(2rem,5vw,3.5rem)] min-[821px]:justify-end min-[821px]:pt-[clamp(2rem,5vw,3.5rem)]">
-        {side}
+      <div className={cn(contentWidth, 'grid', children && 'min-[821px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]')}>
+        <div className="flex flex-col gap-4 bg-panel px-[clamp(1.25rem,5vw,3.5rem)] pt-12 pb-[clamp(2rem,5vw,3.5rem)] min-[821px]:justify-end min-[821px]:pt-[clamp(2rem,5vw,3.5rem)]">
+          {side}
+        </div>
+        {children}
       </div>
-      {children}
     </section>
   )
 }
