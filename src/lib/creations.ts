@@ -1,5 +1,3 @@
-import { isArtKey, type ArtKey } from './specimens'
-
 /** One step of a creation's process. Schema: CREATIONS.md §5. */
 export type Step = {
   n: number
@@ -34,8 +32,7 @@ export type Process = {
 }
 
 export type Creation = Process & {
-  art: ArtKey
-  /** Tile image: the cover screenshot, used when process.json doesn't name a specimen `art`. */
+  /** List thumbnail: the cover screenshot, if there is one. */
   image: string | null
   isNew: boolean
   isDraft: boolean
@@ -45,7 +42,6 @@ export type Creation = Process & {
 }
 
 const NEW_FOR_DAYS = 30
-const FALLBACK_ART: ArtKey = 'prism'
 
 const manifests = import.meta.glob<Process>('/creations/*/process.json', { eager: true, import: 'default' })
 // Only the PR comment links from each conversation log (see the creations plugin in vite.config.ts).
@@ -66,8 +62,7 @@ function toCreation(slug: string, p: Process): Creation {
   return {
     ...p,
     slug,
-    art: isArtKey(p.art) ? p.art : FALLBACK_ART,
-    image: !isArtKey(p.art) && p.cover ? fileUrl(slug, p.cover) : null,
+    image: p.cover ? fileUrl(slug, p.cover) : null,
     isNew: ageDays <= NEW_FOR_DAYS,
     isDraft: !p.published,
     url: `/creations/${slug}/`,

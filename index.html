@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -19,9 +19,16 @@
     </script>
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Light or dark follows the reader's system setting (polarize-ui's .dark class).
+         Fonts are self-hosted by polarize-ui: no font CDN. -->
+    <script>
+      (function () {
+        var m = window.matchMedia('(prefers-color-scheme: dark)')
+        var set = function () { document.documentElement.classList.toggle('dark', m.matches) }
+        set()
+        m.addEventListener('change', set)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
