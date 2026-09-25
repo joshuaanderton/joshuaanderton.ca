@@ -4,7 +4,11 @@ Vite + React 19 + Tailwind v4, with shadcn-style components in `src/components/u
 
 ## Design
 
-Follow `design/specimen-design-system.md` for all site UI, and `design/specimen-icons-prompt.md` for new specimen icons (add them to `src/lib/specimens.ts`). Theme tokens are in `src/app.css`. The design doc's setup section assumes Next.js; this site is Vite, so fonts load from Google Fonts in `index.html` and dark mode is a `.dark` class on `<html>`. For now the site is dark-only: the class is hard-coded in `index.html`, and there's no theme switcher. Departures from the design doc: no rounded bottom-right corners (header, sheet and grid run straight across; the contact card keeps its top-left corner), and the header shows X, GitHub and LinkedIn icons (`src/components/social-icon.tsx`). The header nav and the About icon grid are built but hidden via `site.show` in `src/lib/site.ts`.
+The site is built on **[polarize-ui](https://github.com/polarizetech/polarize-ui)** (`@polarizetech/polarize-ui`, a git dependency pinned to a tag in `package.json`), the same system as polarize.tech. Components come from `@polarizetech/polarize-ui/react`: the publication layout (`Shell`, `Brand`, `AuthorNote`, `SidebarSection`, `SidebarMeta`, `PostList`, `Article`, `Footer`), typography (`Display`, `Eyebrow`, `Standfirst`) and the shadcn components (`Button`, `Input`, `Select`, `Tabs`, `Slider`, …). `src/app.css` only wires it in: Tailwind, `tw-animate-css`, `@polarizetech/polarize-ui/theme.css`, and an `@source` line so Tailwind sees the package's classes. **Do not restyle or copy components here**; anything another site could use goes to polarize-ui and comes back as a new tag (`yarn add github:polarizetech/polarize-ui#vX.Y.Z`).
+
+Rules that come with the system: Instrument Serif for headings, never uppercased; Inter for running text, never bold, never tracked; uppercase is always IBM Plex Mono (`.ui-label`); every colour is a token. Fonts are self-hosted by the package (no font CDN). Light and dark follow the reader's system setting (a `.dark` class set by the script in `index.html`). The X, GitHub and LinkedIn glyphs are `src/components/social-icon.tsx` (lucide has no brand icons).
+
+The previous Specimen design system (redesigned away 2026-09-25) is in git history: `git show 8b12670:design/specimen-design-system.md`.
 
 ## Creations
 
