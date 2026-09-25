@@ -4,7 +4,7 @@ export const site = {
   name: 'Joshua Anderton',
   tagline: 'Websites, tools and experiments',
   location: 'Victoria, BC',
-  intro: 'Software developer living in Victoria, BC.',
+  intro: 'Software developer from Victoria, BC.',
   // TODO: confirm the public contact address before launch.
   email: 'hello@joshuaanderton.ca',
   /** Other places the work lives. */
@@ -12,6 +12,10 @@ export const site = {
     { label: 'Research notes', detail: 'polarize.tech', href: 'https://polarize.tech' },
     { label: 'Code', detail: 'GitHub', href: 'https://github.com/joshuaanderton' },
   ],
+  /** Parts of the site that are built but hidden for now. */
+  show: {
+    creations: false,
+  },
   links: [
     { label: 'X', icon: 'x', href: 'https://x.com/joshuaanderton' },
     { label: 'GitHub', icon: 'github', href: 'https://github.com/joshuaanderton' },
