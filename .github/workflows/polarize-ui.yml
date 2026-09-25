@@ -1,6 +1,6 @@
 # Keep @polarizetech/polarize-ui on the newest release.
 #
-# Hourly (and on demand) this looks for a newer vX.Y.Z tag on
+# Once a day (and on demand from the Actions tab) this looks for a newer vX.Y.Z tag on
 # github.com/polarizetech/polarize-ui. If there is one it updates package.json and
 # yarn.lock, runs the full build (type check + Vite), and only if that passes commits
 # to master and starts the Pages deploy. A failed build pushes nothing and fails the
@@ -9,10 +9,8 @@ name: polarize-ui
 
 on:
   schedule:
-    - cron: "23 * * * *"
+    - cron: "23 11 * * *"
   workflow_dispatch:
-  repository_dispatch:
-    types: [polarize-ui-release]
 
 permissions:
   contents: write
