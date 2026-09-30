@@ -347,9 +347,9 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.5":
-  version "0.5.5"
-  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/b2d11f4d89d34fdd1149669d78fa98a35d780662"
+"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.13":
+  version "0.5.13"
+  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/ab49adc0b87e55ff10ca23a6bb9f5d13661f23aa"
   dependencies:
     "@visx/axis" "^4.0.0"
     "@visx/curve" "^4.0.0"
