@@ -347,9 +347,9 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.15":
-  version "0.5.15"
-  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/bdc93388979289163405ad6b49f7d172cb1a7ab3"
+"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.16":
+  version "0.5.16"
+  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/b01d02cc6535200b9f1a371c787f87f6f44a161b"
   dependencies:
     "@visx/axis" "^4.0.0"
     "@visx/curve" "^4.0.0"
@@ -365,9 +365,9 @@
     radix-ui "^1.6.7"
     tailwind-merge "^3.7.0"
 
-"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.16":
-  version "0.5.16"
-  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/b01d02cc6535200b9f1a371c787f87f6f44a161b"
+"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.5.17":
+  version "0.5.17"
+  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/be1625800f37b806d14629e27ced47761947352c"
   dependencies:
     "@visx/axis" "^4.0.0"
     "@visx/curve" "^4.0.0"
