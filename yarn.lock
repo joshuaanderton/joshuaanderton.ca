@@ -365,9 +365,9 @@
     radix-ui "^1.6.7"
     tailwind-merge "^3.7.0"
 
-"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.6.9":
-  version "0.6.9"
-  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/935f751d4751fbc5a9bdf32c5c22563538819863"
+"@polarizetech/polarize-ui@github:polarizetech/polarize-ui#v0.7.0":
+  version "0.7.0"
+  resolved "https://codeload.github.com/polarizetech/polarize-ui/tar.gz/26807c83246376d727b153d6dabdbe853e7a8eeb"
   dependencies:
     "@visx/axis" "^4.0.0"
     "@visx/curve" "^4.0.0"
